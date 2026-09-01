@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>7日間無料デモ体験｜高認GAMBA（江原予備校）</title>
+<meta name="description" content="高認GAMBAの7日間無料デモ体験。情報・数学の実際の教材をその場でお試しいただけます。">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue: #29b6f6; --blue-dark: #0288d1; --blue-light: #e1f5fe;
+    --orange: #ff8f00; --dark: #01579b; --gray: #f0faff;
+    --text: #37474f; --muted: #78909c; --white: #fff;
+    --green: #2e7d5e; --red: #e53935; --red-light: #ffebee;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Noto Sans JP',sans-serif; background:var(--gray); color:var(--text); line-height:1.8; }
+
+  /* HERO */
+  .hero { background:linear-gradient(135deg,#0288d1 0%,#29b6f6 70%); color:#fff; padding:56px 24px 44px; text-align:center; }
+  .hero-badge { display:inline-block; background:rgba(255,255,255,0.2); border:1px solid rgba(255,255,255,0.45); font-size:12px; font-weight:700; padding:5px 16px; border-radius:50px; margin-bottom:16px; letter-spacing:0.05em; }
+  .hero h1 { font-size:clamp(22px,4vw,32px); font-weight:900; margin-bottom:12px; line-height:1.5; }
+  .hero h1 span { color:#fff176; }
+  .hero p { font-size:14px; color:rgba(255,255,255,0.92); max-width:520px; margin:0 auto; line-height:1.9; }
+
+  .about-band { background:var(--orange); color:#fff; padding:12px 20px; text-align:center; font-size:13px; font-weight:700; letter-spacing:0.04em; }
+
+  .container { max-width:820px; margin:0 auto; padding:44px 20px 60px; }
+
+  .section-label { text-align:center; font-size:11px; font-weight:700; letter-spacing:0.15em; color:var(--blue-dark); text-transform:uppercase; margin-bottom:8px; }
+  .section-title { text-align:center; font-size:20px; font-weight:900; color:var(--dark); margin-bottom:32px; }
+
+  /* パネル（情報・数学） */
+  .panel { background:#fff; border-radius:18px; overflow:hidden; box-shadow:0 6px 24px rgba(2,136,209,0.09); border:1.5px solid #d0e8f8; margin-bottom:28px; }
+  .ph { padding:18px 22px; display:flex; align-items:center; gap:14px; color:#fff; }
+  .ph.info { background:linear-gradient(135deg,#e65100,#ff8f00); }
+  .ph.math { background:linear-gradient(135deg,#00796b,#26a69a); }
+  .ph-icon { width:42px; height:42px; background:rgba(255,255,255,0.2); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:20px; flex-shrink:0; }
+  .ph-name { font-size:17px; font-weight:900; }
+  .ph-sub { font-size:11px; color:rgba(255,255,255,0.85); font-weight:700; margin-top:2px; }
+
+  .qa { padding:20px 20px 4px; }
+  .qb { background:#fff; border-radius:12px; border:1.5px solid #e1f5fe; padding:16px 18px; margin-bottom:12px; }
+  .qb.ok { border-left:4px solid var(--green); background:#f8fffb; }
+  .qb.ng { border-left:4px solid var(--red); background:#fff8f8; }
+  .qb-top { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .qn { width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:900; color:#fff; flex-shrink:0; }
+  .qn.info { background:linear-gradient(135deg,#e65100,#ff8f00); }
+  .qn.math { background:linear-gradient(135deg,#00796b,#26a69a); }
+  .qb-meta { font-size:11px; color:var(--muted); font-weight:700; }
+  .qb-ri { margin-left:auto; font-size:16px; }
+  .qt { font-size:14px; color:var(--text); line-height:1.8; margin-bottom:10px; }
+  .qf { background:var(--gray); border-left:4px solid var(--blue-dark); padding:8px 12px; border-radius:0 8px 8px 0; font-size:13px; color:var(--dark); font-weight:700; margin-bottom:10px; display:inline-block; }
+  .opts { display:grid; grid-template-columns:1fr 1fr; gap:7px; }
+  @media(max-width:480px){ .opts{ grid-template-columns:1fr; } }
+  .opt { padding:9px 12px; border:1.5px solid #b3e5fc; border-radius:9px; font-size:13px; cursor:pointer; background:#fff; color:var(--text); text-align:left; line-height:1.5; font-family:inherit; }
+  .opt:hover:not(.dis) { background:var(--blue-light); border-color:var(--blue-dark); }
+  .opt.ok-ans, .opt.show-ok { background:#e8f5e9; border-color:#2e7d32; color:#1b5e20; font-weight:700; }
+  .opt.ng-ans { background:var(--red-light); border-color:var(--red); color:var(--red); }
+  .opt.dis { cursor:default; }
+  .exp { margin-top:9px; padding:9px 13px; background:#fff8e1; border-left:4px solid var(--orange); border-radius:0 8px 8px 0; font-size:12px; color:#4e342e; line-height:1.7; display:none; }
+  .exp.show { display:block; }
+  .exp strong { color:#bf360c; }
+
+  .lr { background:linear-gradient(135deg,var(--dark),var(--blue-dark)); border-radius:14px; padding:24px 20px; margin:4px 20px 20px; text-align:center; color:#fff; display:none; }
+  .lr.show { display:block; }
+  .lr-score { font-size:44px; font-weight:900; line-height:1; }
+  .lr-total { font-size:14px; opacity:0.9; margin-bottom:4px; }
+  .lr-msg { font-size:13px; color:rgba(255,255,255,0.9); margin:8px 0 4px; line-height:1.7; }
+
+  /* CTA */
+  .cta-box { background:linear-gradient(135deg,#e1f5fe,#b3e5fc); border-radius:18px; padding:32px 24px; text-align:center; margin-top:36px; }
+  .cta-box h2 { font-size:18px; font-weight:900; color:var(--dark); margin-bottom:10px; line-height:1.6; }
+  .cta-box p { font-size:13px; color:var(--muted); margin-bottom:22px; line-height:1.8; }
+  .cta-btns { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+  .cta-btn { display:inline-block; padding:14px 28px; border-radius:50px; font-weight:700; font-size:14px; text-decoration:none; }
+  .cta-btn.main { background:linear-gradient(135deg,var(--orange),#ffca28); color:#fff; box-shadow:0 8px 20px rgba(255,143,0,0.3); }
+  .cta-btn.line { background:#06c755; color:#fff; }
+  .cta-note { font-size:11px; color:var(--muted); margin-top:14px; }
+
+  footer { text-align:center; padding:24px; font-size:12px; color:var(--muted); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">🎓 7日間無料デモ体験</div>
+  <h1>分数からでも、英語ゼロからでも。<br><span>高認合格から、その先へ。</span></h1>
+  <p>実際の高認GAMBA教材から、「情報」「数学」を抜粋してお試しいただけます。<br>登録不要・その場ですぐ体験できます。</p>
+</div>
+
+<div class="about-band">▶ 下の問題に、実際にチャレンジしてみてください</div>
+
+<div class="container">
+
+  <p class="section-label">Demo Contents</p>
+  <h2 class="section-title">体験できる教材（情報・数学）</h2>
+
+  <!-- 情報 -->
+  <div class="panel">
+    <div class="ph info">
+      <div class="ph-icon">💻</div>
+      <div>
+        <div class="ph-name">情報</div>
+        <div class="ph-sub">2026年度 新必修科目｜基礎10問</div>
+      </div>
+    </div>
+    <div class="qa" id="qa-info"></div>
+    <div class="lr" id="lr-info">
+      <div class="lr-score" id="lrs-info">0</div>
+      <div class="lr-total">/ 10問</div>
+      <div class="lr-msg" id="lrm-info"></div>
+    </div>
+  </div>
+
+  <!-- 数学 -->
+  <div class="panel">
+    <div class="ph math">
+      <div class="ph-icon">📐</div>
+      <div>
+        <div class="ph-name">数学</div>
+        <div class="ph-sub">二次関数・三角比・データの分析｜高認頻出10問</div>
+      </div>
+    </div>
+    <div class="qa" id="qa-math"></div>
+    <div class="lr" id="lr-math">
+      <div class="lr-score" id="lrs-math">0</div>
+      <div class="lr-total">/ 10問</div>
+      <div class="lr-msg" id="lrm-math"></div>
+    </div>
+  </div>
+
+  <div class="cta-box">
+    <h2>手応えはいかがでしたか？<br>ここから先は、GAMBAが伴走します。</h2>
+    <p>分からないところがあっても大丈夫。AIにいつでも質問でき、それでも解決しなければLINEで講師に直接聞けます。<br>まずは無料相談から、お気軽にどうぞ。</p>
+    <div class="cta-btns">
+      <a href="https://kouninbegin.com/#contact" class="cta-btn main">メールで無料相談する →</a>
+      <a href="https://line.me/R/ti/p/@735itfta" target="_blank" class="cta-btn line">💬 LINEで相談する →</a>
+    </div>
+    <p class="cta-note">※ しつこい営業は一切ありません。20数年の実績・合格率90%以上。</p>
+  </div>
+
+</div>
+
+<footer>© 江原予備校 GAMBA｜<a href="https://kouninbegin.com" style="color:var(--blue-dark)">kouninbegin.com へ戻る</a></footer>
+
+<script>
+const QUESTIONS = {
+  info: [
+    { text:"「情報」科目の説明として正しいものを選びなさい。", options:["2026年度から高認の新必修科目","選択科目の一つである","2020年から必修だった","理科の一部として扱われる"], answer:0, exp:"<strong>2026年度（令和8年度）から高認の新必修科目</strong>として追加された。高校「情報Ⅰ」に準拠した内容。" },
+    { text:"インターネットで情報を検索するためのソフトウェアを何というか。", options:["ブラウザ（Webブラウザ）","メーラー","OS","ワープロ"], answer:0, exp:"<strong>ブラウザ（Webブラウザ）</strong>はHTMLを読んでWebページを表示するソフト。例：Chrome、Firefox、Edge。" },
+    { text:"電子メールのアドレス「taro@example.com」で「@」より前の部分を何というか。", options:["ユーザー名（アカウント名）","ドメイン名","プロトコル","ポート番号"], answer:0, exp:"メールアドレスは「<strong>ユーザー名</strong> @ ドメイン名」の構造。@より後の example.com がドメイン名。" },
+    { text:"著作権について正しいものを選びなさい。", options:["インターネット上の画像も著作権で保護されている","著作権は作者が死亡した瞬間に消滅する","フリーと書いてあれば何でも使用できる","スクリーンショットは常に自由に使える"], answer:0, exp:"<strong>著作権はインターネット上の作品にも適用</strong>される。作者の死後70年まで保護が続く（著作権法）。" },
+    { text:"パスワードの設定として最も安全なものを選びなさい。", options:["大文字・小文字・数字・記号を混在させた12文字以上","自分の誕生日8桁","名前をそのまま使った6文字","password という文字列"], answer:0, exp:"<strong>長く・複雑なパスワード</strong>が安全。誕生日・名前・password は不正アクセスされやすい最も危険な例。" },
+    { text:"コンピュータのOSとして正しいものを選びなさい。", options:["Windows・macOS・Android","Word・Excel・PowerPoint","Chrome・Firefox・Edge","Python・Java・C言語"], answer:0, exp:"<strong>OS（オペレーティングシステム）</strong>はコンピュータ全体を管理するソフトウェア。Windows・macOS・Androidなどが代表例。" },
+    { text:"「フィッシング詐欺」の説明として正しいものを選びなさい。", options:["偽サイトや偽メールでID・パスワードを騙し取る詐欺","魚釣りゲームを悪用した詐欺","コンピュータに侵入するウイルスの一種","メールの添付ファイルで感染するマルウェア"], answer:0, exp:"<strong>フィッシング詐欺</strong>（phishing）：偽の銀行サイト等に誘導し個人情報を騙し取る。メールのリンクに注意。" },
+    { text:"2進数「1010」を10進数に変換すると？", options:["10","8","12","14"], answer:0, exp:"1×2³ + 0×2² + 1×2¹ + 0×2⁰ = 8 + 0 + 2 + 0 = <strong>10</strong>。2進法はコンピュータの基本。" },
+    { text:"「プロトコル」の説明として正しいものを選びなさい。", options:["コンピュータ間の通信規約","コンピュータの部品の名前","ファイルの保存形式","プログラムの実行方法"], answer:0, exp:"<strong>プロトコル</strong>はコンピュータがデータをやり取りするための取り決め（規約）。HTTP・HTTPS・FTPなどが代表例。" },
+    { text:"「個人情報」の取り扱いで正しいものを選びなさい。", options:["名前・住所・電話番号などは個人情報に該当する","学校名だけでは個人情報にならない","SNSに顔写真を投稿しても個人情報の問題はない","生年月日は個人情報に含まれない"], answer:0, exp:"<strong>名前・住所・電話番号・顔写真・生年月日</strong>はすべて個人情報（個人情報保護法）。組み合わせで特定できるものも対象。" }
+  ],
+  math: [
+    { text:"二次方程式を解きなさい。", formula:"x² - 5x + 6 = 0", options:["x = 2, 3","x = 1, 6","x = -2, -3","x = -1, -6"], answer:0, exp:"因数分解：(x-2)(x-3)=0 → <strong>x=2 または x=3</strong>。因数分解できる二次方程式は必ずマスター。" },
+    { text:"y = 2x² - 4x + 1 の頂点の座標を求めなさい。", options:["(1, -1)","(-1, 7)","(2, 1)","(0, 1)"], answer:0, exp:"平方完成：y = 2(x-1)² - 1 → 頂点 <strong>(1, -1)</strong>。平方完成は高認数学の最頻出単元。" },
+    { text:"不等式を解きなさい。", formula:"3x - 6 > 0", options:["x > 2","x < 2","x > -2","x < -2"], answer:0, exp:"3x > 6 → <strong>x > 2</strong>。不等号の向きに注意（÷正の数では変わらない）。" },
+    { text:"右の三角形で tan A の値を求めなさい。（直角三角形、対辺=3、底辺=4、斜辺=5）", options:["3/4","4/3","3/5","4/5"], answer:0, exp:"tan A = 対辺 ÷ 底辺 = <strong>3/4</strong>。sin = 対/斜、cos = 底/斜、tan = 対/底 を確認。" },
+    { text:"次の2次不等式を解きなさい。", formula:"x² - 3x - 4 < 0", options:["-1 < x < 4","x < -1 または x > 4","-4 < x < 1","x < -4 または x > 1"], answer:0, exp:"(x+1)(x-4)<0 → <strong>-1 < x < 4</strong>。放物線が x 軸より下（<0）の範囲を求める。高認で8回中7回出題の最重要単元。" },
+    { text:"データ 2, 4, 6, 8, 10 の平均値と中央値を求めなさい。", options:["平均6、中央値6","平均5、中央値6","平均6、中央値5","平均5、中央値5"], answer:0, exp:"平均 = (2+4+6+8+10)/5 = 30/5 = <strong>6</strong>。中央値（3番目）= <strong>6</strong>。データの分析は頻出。" },
+    { text:"次のデータの標準偏差として正しい考え方を選びなさい。\nデータ：2, 4, 6（平均は4）", options:["各データと平均との差の二乗を平均した値の正の平方根","全データの合計を個数で割った値","最大値と最小値の差","データを小さい順に並べた中央の値"], answer:0, exp:"標準偏差の定義：<strong>分散（偏差の二乗平均）の正の平方根</strong>。データのばらつき具合を表す指標。" },
+    { text:"関数 y = -2x + 5 のグラフの傾きと y 切片を求めなさい。", options:["傾き -2、y切片 5","傾き 2、y切片 5","傾き -2、y切片 -5","傾き 5、y切片 -2"], answer:0, exp:"y = mx + b の形。m = 傾き = <strong>-2</strong>、b = y切片 = <strong>5</strong>。一次関数の基本。" },
+    { text:"次の集合について、A∩B（共通部分）を求めなさい。\nA={1,2,3,4}, B={3,4,5,6}", options:["{3,4}","{1,2,5,6}","{1,2,3,4,5,6}","{}（空集合）"], answer:0, exp:"共通部分（∩）は<strong>両方に含まれる要素</strong>。A にも B にもあるのは 3 と 4 → <strong>{3,4}</strong>。"},
+    { text:"次の式をたすき掛けで因数分解しなさい。", formula:"2x² + 5x + 3 = ?", options:["(2x+3)(x+1)","(2x+1)(x+3)","(x+3)(x-1)","(2x-3)(x-1)"], answer:0, exp:"たすき掛け：2と1、3と1の組み合わせで、外×外＋内×内 = 2x+3x = 5x になる組み合わせを探す → <strong>(2x+3)(x+1)</strong>。高認頻出パターン。" }
+  ]
+};
+
+const answered = { info:{}, math:{} };
+const answers  = { info:{}, math:{} };
+
+function renderPanel(s) {
+  const qs = QUESTIONS[s];
+  let html = '';
+  qs.forEach((q, i) => {
+    const isDone = answered[s][i];
+    const chosen = answers[s][i];
+    let fhtml = q.formula ? '<div class="qf">' + q.formula + '</div>' : '';
+    const ohtml = q.options.map((opt, oi) => {
+      let cls = 'opt';
+      if (isDone) {
+        cls += ' dis';
+        if (oi === q.answer) cls += ' show-ok';
+        if (oi === chosen && chosen !== q.answer) cls += ' ng-ans';
+      }
+      return `<button class="${cls}" onclick="selAns('${s}',${i},${oi},${q.answer})">${opt}</button>`;
+    }).join('');
+    const icon = isDone ? (chosen === q.answer ? '✅' : '❌') : '';
+    const bc = isDone ? (chosen === q.answer ? 'qb ok' : 'qb ng') : 'qb';
+    const expCls = isDone ? ' show' : '';
+    html += `<div class="${bc}" id="qb-${s}-${i}"><div class="qb-top"><div class="qn ${s}">${i+1}</div><div class="qb-meta">第${i+1}問</div><div class="qb-ri">${icon}</div></div><div class="qt">${q.text.replace(/\n/g,"<br>")}</div>${fhtml}<div class="opts">${ohtml}</div><div class="exp${expCls}" id="exp-${s}-${i}">💡 ${q.exp}</div></div>`;
+  });
+  document.getElementById('qa-' + s).innerHTML = html;
+}
+
+function selAns(s, i, chosen, correct) {
+  if (answered[s][i]) return;
+  answered[s][i] = true;
+  answers[s][i] = chosen;
+  const block = document.getElementById('qb-' + s + '-' + i);
+  const exp = document.getElementById('exp-' + s + '-' + i);
+  block.querySelectorAll('.opt').forEach((btn, oi) => {
+    btn.classList.add('dis');
+    if (oi === correct) btn.classList.add('show-ok');
+    if (oi === chosen && chosen !== correct) btn.classList.add('ng-ans');
+  });
+  exp.classList.add('show');
+  block.className = 'qb ' + (chosen === correct ? 'ok' : 'ng');
+  block.querySelector('.qb-ri').textContent = chosen === correct ? '✅' : '❌';
+
+  const allDone = QUESTIONS[s].every((q, idx) => answered[s][idx]);
+  if (allDone) showResult(s);
+}
+
+function showResult(s) {
+  const qs = QUESTIONS[s];
+  let c = 0;
+  qs.forEach((q, i) => { if (answers[s][i] === q.answer) c++; });
+  const pct = Math.round(c / qs.length * 100);
+  let msg;
+  if (pct >= 90) msg = '素晴らしい！このペースなら十分に合格を目指せます🎉';
+  else if (pct >= 70) msg = '良い調子です。もう一歩で合格ラインです👍';
+  else if (pct >= 50) msg = '大丈夫、ここからしっかり基礎を積み上げましょう📖';
+  else msg = '基礎から始めれば、着実に力がつきます。一緒にやり直しましょう😊';
+  document.getElementById('lrs-' + s).textContent = c;
+  document.getElementById('lrm-' + s).textContent = msg;
+  const lr = document.getElementById('lr-' + s);
+  lr.classList.add('show');
+  lr.scrollIntoView({ behavior:'smooth', block:'center' });
+}
+
+renderPanel('info');
+renderPanel('math');
+</script>
+</body>
+</html>
