@@ -3,240 +3,981 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>7日間無料デモ体験｜高認GAMBA（江原予備校）</title>
-<meta name="description" content="高認GAMBAの7日間無料デモ体験。情報・数学の実際の教材をその場でお試しいただけます。">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>7日間無料体験｜高認GAMBA（江原予備校）</title>
+<meta name="description" content="高認GAMBAの7日間無料体験。各科目の前半をお試しいただけます。">
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@700&display=swap');
   :root {
-    --blue: #29b6f6; --blue-dark: #0288d1; --blue-light: #e1f5fe;
-    --orange: #ff8f00; --dark: #01579b; --gray: #f0faff;
-    --text: #37474f; --muted: #78909c; --white: #fff;
-    --green: #2e7d5e; --red: #e53935; --red-light: #ffebee;
+    --navy:#1a3a6b; --navy-light:#eef2f8; --orange:#e8650a; --orange-light:#fff4ec;
+    --gold:#f7b733; --text:#2c2c2c; --muted:#666; --bg:#f5f3ef; --white:#fff; --radius:12px;
+    --pink:#e91e8c; --pink-light:#fdf0f8; --green:#2e7d5e; --green-light:#eaf5f0;
+    --purple:#5b3fa6; --purple-light:#f0ebff; --blue:#1a6b9a; --blue-light:#e8f4fd;
+    --teal:#1a7a7a; --teal-light:#e5f5f5; --brown:#7a4a1a; --brown-light:#fdf3e7;
+    --line:#06c755;
   }
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family:'Noto Sans JP',sans-serif; background:var(--gray); color:var(--text); line-height:1.8; }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);line-height:1.75;}
+  a{color:inherit;}
 
-  /* HERO */
-  .hero { background:linear-gradient(135deg,#0288d1 0%,#29b6f6 70%); color:#fff; padding:56px 24px 44px; text-align:center; }
-  .hero-badge { display:inline-block; background:rgba(255,255,255,0.2); border:1px solid rgba(255,255,255,0.45); font-size:12px; font-weight:700; padding:5px 16px; border-radius:50px; margin-bottom:16px; letter-spacing:0.05em; }
-  .hero h1 { font-size:clamp(22px,4vw,32px); font-weight:900; margin-bottom:12px; line-height:1.5; }
-  .hero h1 span { color:#fff176; }
-  .hero p { font-size:14px; color:rgba(255,255,255,0.92); max-width:520px; margin:0 auto; line-height:1.9; }
+  /* ===== カウントダウン帯（画面上部に固定） ===== */
+  .cd-bar{position:sticky;top:0;z-index:50;background:#12294d;color:#fff;
+    display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;
+    padding:8px 14px;font-size:.82rem;min-height:46px;box-shadow:0 2px 8px rgba(0,0,0,.18);}
+  .cd-bar .cd-label{opacity:.85;}
+  .cd-bar .cd-time{font-weight:700;font-size:1rem;color:var(--gold);letter-spacing:.03em;}
+  .cd-bar .cd-until{opacity:.7;font-size:.72rem;}
+  .cd-bar.warn{background:#8a3b00;} .cd-bar.warn .cd-time{color:#ffd9a8;}
+  .cd-bar.urgent{background:#a3200f;} .cd-bar.urgent .cd-time{color:#fff;}
+  .cd-bar.ended{background:#444;}
+  .cd-bar .cd-apply{background:var(--orange);color:#fff;text-decoration:none;font-weight:700;font-size:.74rem;
+    padding:5px 14px;border-radius:20px;white-space:nowrap;}
 
-  .about-band { background:var(--orange); color:#fff; padding:12px 20px; text-align:center; font-size:13px; font-weight:700; letter-spacing:0.04em; }
+  /* ===== ヒーロー ===== */
+  .hero{background:var(--navy);color:#fff;padding:40px 22px 34px;text-align:center;}
+  .logo-wrap{display:inline-flex;align-items:center;gap:12px;margin-bottom:14px;}
+  .logo-badge{width:46px;height:46px;} .logo-name{font-size:1.9rem;font-weight:700;letter-spacing:.2em;}
+  .hero-sub{font-size:.82rem;color:rgba(255,255,255,.7);letter-spacing:.15em;margin-bottom:8px;}
+  .hero-tag{display:inline-block;background:var(--gold);color:var(--navy);font-size:.75rem;font-weight:700;padding:3px 14px;border-radius:20px;margin-bottom:14px;letter-spacing:.08em;}
+  .hero-catch{font-family:'Noto Serif JP',serif;font-size:1.32rem;font-weight:700;color:var(--gold);margin-bottom:10px;line-height:1.6;}
+  .hero-desc{font-size:.84rem;color:rgba(255,255,255,.86);max-width:520px;margin:0 auto;line-height:1.9;}
 
-  .container { max-width:820px; margin:0 auto; padding:44px 20px 60px; }
+  .container{max-width:900px;margin:0 auto;padding:30px 16px 56px;}
+  .section-title{font-family:'Noto Serif JP',serif;font-size:1.08rem;font-weight:700;color:var(--navy);margin:8px 0 16px;padding-left:14px;border-left:4px solid var(--orange);}
 
-  .section-label { text-align:center; font-size:11px; font-weight:700; letter-spacing:0.15em; color:var(--blue-dark); text-transform:uppercase; margin-bottom:8px; }
-  .section-title { text-align:center; font-size:20px; font-weight:900; color:var(--dark); margin-bottom:32px; }
+  /* ===== お知らせ帯（残り3日・1日） ===== */
+  .nudge{display:none;border-radius:var(--radius);padding:16px 18px;margin-bottom:22px;font-size:.88rem;line-height:1.8;}
+  .nudge.show{display:block;}
+  .nudge.warn{background:#fff3e0;border:1px solid #ffcc80;color:#5d3200;}
+  .nudge.urgent{background:#ffebee;border:1px solid #ef9a9a;color:#7a1414;}
+  .nudge b{font-size:1rem;}
+  .limitnote{display:none;background:#e8f1ff;border:1px solid #9ec3f5;color:#123a73;border-radius:var(--radius);padding:16px 18px;margin-bottom:22px;font-size:.9rem;line-height:1.8;}
+  .limitnote.show{display:block;}
+  .limitnote a{color:#0b4fb3;font-weight:700;}
+  .nudge .n-btns{margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;}
 
-  /* パネル（情報・数学） */
-  .panel { background:#fff; border-radius:18px; overflow:hidden; box-shadow:0 6px 24px rgba(2,136,209,0.09); border:1.5px solid #d0e8f8; margin-bottom:28px; }
-  .ph { padding:18px 22px; display:flex; align-items:center; gap:14px; color:#fff; }
-  .ph.info { background:linear-gradient(135deg,#e65100,#ff8f00); }
-  .ph.math { background:linear-gradient(135deg,#00796b,#26a69a); }
-  .ph-icon { width:42px; height:42px; background:rgba(255,255,255,0.2); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:20px; flex-shrink:0; }
-  .ph-name { font-size:17px; font-weight:900; }
-  .ph-sub { font-size:11px; color:rgba(255,255,255,0.85); font-weight:700; margin-top:2px; }
+  .btn{display:inline-block;text-decoration:none;font-weight:700;font-size:.85rem;padding:10px 20px;border-radius:26px;text-align:center;}
+  .btn-primary{background:var(--orange);color:#fff;} .btn-line{background:var(--line);color:#fff;} .btn-ghost{background:#fff;color:var(--navy);border:1px solid #c9d3e3;}
 
-  .qa { padding:20px 20px 4px; }
-  .qb { background:#fff; border-radius:12px; border:1.5px solid #e1f5fe; padding:16px 18px; margin-bottom:12px; }
-  .qb.ok { border-left:4px solid var(--green); background:#f8fffb; }
-  .qb.ng { border-left:4px solid var(--red); background:#fff8f8; }
-  .qb-top { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
-  .qn { width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:900; color:#fff; flex-shrink:0; }
-  .qn.info { background:linear-gradient(135deg,#e65100,#ff8f00); }
-  .qn.math { background:linear-gradient(135deg,#00796b,#26a69a); }
-  .qb-meta { font-size:11px; color:var(--muted); font-weight:700; }
-  .qb-ri { margin-left:auto; font-size:16px; }
-  .qt { font-size:14px; color:var(--text); line-height:1.8; margin-bottom:10px; }
-  .qf { background:var(--gray); border-left:4px solid var(--blue-dark); padding:8px 12px; border-radius:0 8px 8px 0; font-size:13px; color:var(--dark); font-weight:700; margin-bottom:10px; display:inline-block; }
-  .opts { display:grid; grid-template-columns:1fr 1fr; gap:7px; }
-  @media(max-width:480px){ .opts{ grid-template-columns:1fr; } }
-  .opt { padding:9px 12px; border:1.5px solid #b3e5fc; border-radius:9px; font-size:13px; cursor:pointer; background:#fff; color:var(--text); text-align:left; line-height:1.5; font-family:inherit; }
-  .opt:hover:not(.dis) { background:var(--blue-light); border-color:var(--blue-dark); }
-  .opt.ok-ans, .opt.show-ok { background:#e8f5e9; border-color:#2e7d32; color:#1b5e20; font-weight:700; }
-  .opt.ng-ans { background:var(--red-light); border-color:var(--red); color:var(--red); }
-  .opt.dis { cursor:default; }
-  .exp { margin-top:9px; padding:9px 13px; background:#fff8e1; border-left:4px solid var(--orange); border-radius:0 8px 8px 0; font-size:12px; color:#4e342e; line-height:1.7; display:none; }
-  .exp.show { display:block; }
-  .exp strong { color:#bf360c; }
+  /* ===== 使い方 ===== */
+  .howto{background:#fff;border-radius:var(--radius);padding:20px 20px 16px;margin-bottom:26px;box-shadow:0 2px 8px rgba(0,0,0,.05);}
+  .howto ol{padding-left:1.3em;font-size:.86rem;} .howto li{margin-bottom:6px;}
+  .ai-note{margin-top:12px;background:var(--orange-light);border:1px solid #ffd2b0;border-radius:10px;padding:12px 14px;font-size:.82rem;line-height:1.8;}
+  .stat{font-size:.78rem;color:var(--muted);margin:2px 0 18px;}
 
-  .lr { background:linear-gradient(135deg,var(--dark),var(--blue-dark)); border-radius:14px; padding:24px 20px; margin:4px 20px 20px; text-align:center; color:#fff; display:none; }
-  .lr.show { display:block; }
-  .lr-score { font-size:44px; font-weight:900; line-height:1; }
-  .lr-total { font-size:14px; opacity:0.9; margin-bottom:4px; }
-  .lr-msg { font-size:13px; color:rgba(255,255,255,0.9); margin:8px 0 4px; line-height:1.7; }
+  /* ===== 科目カード ===== */
+  .cards{display:flex;flex-direction:column;gap:14px;margin-bottom:40px;}
+  .subject-card{background:#fff;border-radius:var(--radius);box-shadow:0 2px 12px rgba(0,0,0,.07);overflow:hidden;}
+  .subject-card summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:14px;padding:16px 18px;}
+  .subject-card summary::-webkit-details-marker{display:none;}
+  .card-emoji{font-size:1.9rem;flex-shrink:0;width:48px;height:48px;display:flex;align-items:center;justify-content:center;border-radius:10px;}
+  .card-info{display:flex;flex-direction:column;flex:1;min-width:0;}
+  .card-category{font-size:.62rem;font-weight:700;letter-spacing:.1em;padding:2px 8px;border-radius:20px;align-self:flex-start;margin-bottom:4px;}
+  .card-name{font-size:1.02rem;font-weight:700;line-height:1.3;}
+  .card-level{font-size:.72rem;color:var(--muted);margin-top:3px;}
+  .chev{font-size:1.1rem;color:var(--muted);transition:transform .2s;}
+  .subject-card[open] .chev{transform:rotate(180deg);}
+  .card-body{padding:4px 18px 18px;border-top:1px solid #f0f0f0;}
+  .card-desc{font-size:.82rem;color:#555;margin:12px 0;}
+  .btn-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;}
+  .start-btn,.pdf-btn{display:inline-block;text-decoration:none;font-weight:700;font-size:.82rem;padding:9px 18px;border-radius:24px;}
+  .list-title{font-size:.76rem;font-weight:700;color:var(--muted);margin:6px 0 4px;}
+  .unit-list{padding-left:1.6em;font-size:.84rem;columns:1;}
+  .unit-list li{margin:3px 0;} .unit-list a{text-decoration:none;border-bottom:1px dotted #aaa;} .unit-list a:hover{border-bottom-style:solid;}
+  .more{margin-top:12px;font-size:.78rem;background:#f7f7f7;border-radius:8px;padding:8px 12px;color:#555;}
+  @media(min-width:700px){.unit-list.long{columns:2;column-gap:28px;}}
 
-  /* CTA */
-  .cta-box { background:linear-gradient(135deg,#e1f5fe,#b3e5fc); border-radius:18px; padding:32px 24px; text-align:center; margin-top:36px; }
-  .cta-box h2 { font-size:18px; font-weight:900; color:var(--dark); margin-bottom:10px; line-height:1.6; }
-  .cta-box p { font-size:13px; color:var(--muted); margin-bottom:22px; line-height:1.8; }
-  .cta-btns { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
-  .cta-btn { display:inline-block; padding:14px 28px; border-radius:50px; font-weight:700; font-size:14px; text-decoration:none; }
-  .cta-btn.main { background:linear-gradient(135deg,var(--orange),#ffca28); color:#fff; box-shadow:0 8px 20px rgba(255,143,0,0.3); }
-  .cta-btn.line { background:#06c755; color:#fff; }
-  .cta-note { font-size:11px; color:var(--muted); margin-top:14px; }
+  .c-kokugo .card-emoji{background:var(--pink-light);} .c-kokugo .card-category{background:var(--pink);color:#fff;} .c-kokugo .start-btn{background:var(--pink);color:#fff;} .c-kokugo .pdf-btn{background:var(--pink-light);color:var(--pink);}
+  .c-english .card-emoji{background:var(--blue-light);} .c-english .card-category{background:var(--blue);color:#fff;} .c-english .start-btn{background:var(--blue);color:#fff;} .c-english .pdf-btn{background:var(--blue-light);color:var(--blue);}
+  .c-math .card-emoji{background:var(--orange-light);} .c-math .card-category{background:var(--orange);color:#fff;} .c-math .start-btn{background:var(--orange);color:#fff;} .c-math .pdf-btn{background:var(--orange-light);color:var(--orange);}
+  .c-chiri .card-emoji{background:var(--teal-light);} .c-chiri .card-category{background:var(--teal);color:#fff;} .c-chiri .start-btn{background:var(--teal);color:#fff;} .c-chiri .pdf-btn{background:var(--teal-light);color:var(--teal);}
+  .c-history .card-emoji{background:var(--brown-light);} .c-history .card-category{background:var(--brown);color:#fff;} .c-history .start-btn{background:var(--brown);color:#fff;} .c-history .pdf-btn{background:var(--brown-light);color:var(--brown);}
+  .c-koukyou .card-emoji{background:var(--purple-light);} .c-koukyou .card-category{background:var(--purple);color:#fff;} .c-koukyou .start-btn{background:var(--purple);color:#fff;} .c-koukyou .pdf-btn{background:var(--purple-light);color:var(--purple);}
+  .c-joho .card-emoji{background:var(--navy-light);} .c-joho .card-category{background:var(--navy);color:#fff;} .c-joho .start-btn{background:var(--navy);color:#fff;} .c-joho .pdf-btn{background:var(--navy-light);color:var(--navy);}
+  .c-kagaku .card-emoji{background:var(--green-light);} .c-kagaku .card-category{background:var(--green);color:#fff;} .c-kagaku .start-btn{background:var(--green);color:#fff;} .c-kagaku .pdf-btn{background:var(--green-light);color:var(--green);}
+  .c-seibutsu .card-emoji{background:#e8f5e9;} .c-seibutsu .card-category{background:#388e3c;color:#fff;} .c-seibutsu .start-btn{background:#388e3c;color:#fff;} .c-seibutsu .pdf-btn{background:#e8f5e9;color:#388e3c;}
 
-  footer { text-align:center; padding:24px; font-size:12px; color:var(--muted); }
+  /* ===== 本科の案内 ===== */
+  .cta-section{background:var(--navy);border-radius:var(--radius);padding:28px 22px;text-align:center;color:#fff;margin-bottom:34px;}
+  .cta-title{font-family:'Noto Serif JP',serif;font-size:1.08rem;color:var(--gold);margin-bottom:10px;}
+  .cta-text{font-size:.82rem;color:rgba(255,255,255,.86);margin-bottom:16px;line-height:1.9;}
+  .cta-btns{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;}
+  .cta-small{font-size:.72rem;color:rgba(255,255,255,.65);margin-top:12px;}
+
+  /* ===== ご意見フォーム ===== */
+  .fb{background:#fff;border-radius:var(--radius);padding:22px 20px;box-shadow:0 2px 8px rgba(0,0,0,.05);margin-bottom:30px;}
+  .fb p.lead{font-size:.84rem;margin-bottom:14px;color:#555;}
+  .fb label{display:block;font-size:.78rem;font-weight:700;margin:12px 0 4px;color:var(--navy);}
+  .fb select,.fb input[type=text],.fb textarea{width:100%;font:inherit;font-size:16px;padding:10px 12px;border:1px solid #c9d3e3;border-radius:8px;background:#fff;}
+  .fb textarea{min-height:120px;resize:vertical;}
+  .fb .hint{font-size:.72rem;color:var(--muted);margin-top:4px;}
+  .fb .count{text-align:right;font-size:.72rem;color:var(--muted);}
+  .fb .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;}
+  .fb button{margin-top:14px;background:var(--navy);color:#fff;border:none;font:inherit;font-weight:700;font-size:.9rem;padding:12px 30px;border-radius:26px;cursor:pointer;}
+  .fb button:disabled{background:#9aa5b8;cursor:default;}
+  .fb .msg{margin-top:12px;font-size:.84rem;padding:10px 12px;border-radius:8px;display:none;}
+  .fb .msg.ok{display:block;background:#e6f7ee;color:#0b5a32;border:1px solid #a7e3c4;}
+  .fb .msg.ng{display:block;background:#fff3e0;color:#7a3d00;border:1px solid #ffcc80;}
+
+  /* ===== 使用規約 ===== */
+  .terms{background:#fff;border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.05);margin-bottom:26px;}
+  .terms summary{cursor:pointer;padding:14px 18px;font-weight:700;font-size:.88rem;color:var(--navy);}
+  .terms .tbody{padding:0 20px 18px;font-size:.8rem;color:#444;}
+  .terms ol{padding-left:1.4em;} .terms li{margin:6px 0;}
+
+  /* ===== 期限切れ ===== */
+  .ended-panel{display:none;background:#fff;border-radius:var(--radius);padding:30px 22px;text-align:center;box-shadow:0 2px 12px rgba(0,0,0,.08);margin-bottom:30px;}
+  .ended-panel h2{font-family:'Noto Serif JP',serif;font-size:1.2rem;color:var(--navy);margin-bottom:10px;}
+  .ended-panel p{font-size:.88rem;margin-bottom:8px;}
+  .ended-panel .cta-btns{margin-top:16px;}
+  body.expired .ended-panel{display:block;}
+  body.expired #mainArea,body.expired .hide-ended,body.expired .howto,body.expired .stat,body.expired .nudge,body.expired .limitnote{display:none !important;}
+
+  footer{text-align:center;padding:24px 16px;font-size:.72rem;color:var(--muted);border-top:1px solid #e0e0e0;}
 </style>
 </head>
 <body>
 
-<div class="hero">
-  <div class="hero-badge">🎓 7日間無料デモ体験</div>
-  <h1>分数からでも、英語ゼロからでも。<br><span>高認合格から、その先へ。</span></h1>
-  <p>実際の高認GAMBA教材から、「情報」「数学」を抜粋してお試しいただけます。<br>登録不要・その場ですぐ体験できます。</p>
+<!-- ===== 残り時間（画面の一番上に付いてきます） ===== -->
+<div class="cd-bar" id="cdBar" role="status" aria-live="polite">
+  <span class="cd-label">🕒 無料体験</span>
+  <span class="cd-time" id="cdTime">読み込み中…</span>
+  <span class="cd-until" id="cdUntil"></span>
+  <a class="cd-apply" id="cdApply" href="https://kouninbegin.com/#apply" target="_blank" rel="noopener" style="display:none">続けたい方はこちら</a>
 </div>
 
-<div class="about-band">▶ 下の問題に、実際にチャレンジしてみてください</div>
+<div class="hero">
+  <div class="logo-wrap">
+    <svg class="logo-badge" viewBox="0 0 48 48" aria-hidden="true">
+      <polygon points="24,3 42,13 42,35 24,45 6,35 6,13" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.5)" stroke-width="1"></polygon>
+      <text x="24" y="30" text-anchor="middle" font-size="18" font-weight="700" fill="white">G</text>
+    </svg>
+    <span class="logo-name">GAMBA</span>
+  </div>
+  <div class="hero-sub">江原予備校　独自学習システム</div>
+  <div class="hero-tag">7日間 無料体験</div>
+  <div class="hero-catch">わかった！が続く。<br>まずは、各科目の前半を体験してください。</div>
+  <div class="hero-desc">
+    高卒認定試験 9科目の教材を、それぞれ前半ぶんお試しいただけます。<br>
+    登録は不要。気になる科目から、好きな順番でどうぞ。
+  </div>
+</div>
 
 <div class="container">
 
-  <p class="section-label">Demo Contents</p>
-  <h2 class="section-title">体験できる教材（情報・数学）</h2>
+  <!-- 残り3日・1日のお知らせ -->
+  <div class="nudge" id="nudge"></div>
 
-  <!-- 情報 -->
-  <div class="panel">
-    <div class="ph info">
-      <div class="ph-icon">💻</div>
-      <div>
-        <div class="ph-name">情報</div>
-        <div class="ph-sub">2026年度 新必修科目｜基礎10問</div>
-      </div>
-    </div>
-    <div class="qa" id="qa-info"></div>
-    <div class="lr" id="lr-info">
-      <div class="lr-score" id="lrs-info">0</div>
-      <div class="lr-total">/ 10問</div>
-      <div class="lr-msg" id="lrm-info"></div>
+  <!-- 体験の範囲の外へ進もうとしたときの案内（?from=limit） -->
+  <div class="limitnote" id="limitNote">
+    <b>この先は、本科でご利用いただけます。</b><br>
+    体験版では、各科目の前半の単元をお試しいただけます。続きの単元や、単元の一覧は本科の内容です。下の科目から、体験の続きをどうぞ。<br>
+    <a href="https://kouninbegin.com/#apply" target="_blank" rel="noopener">本科の内容を見る・申し込む</a>
+    　／　すでに本科の生徒さんは<a href="https://realizefield.github.io/gamba-kounin-seito/gamba-kounin-seito.html">こちらから入ってください</a>
+  </div>
+
+  <div class="howto">
+    <div class="section-title" style="margin-top:0">体験の使い方</div>
+    <ol>
+      <li>下の科目をタップして、<b>「▶ ここから始める」</b>を押します。</li>
+      <li>単元は「解説 → 練習 → 確認」の順に進みます。進み具合は、このブラウザに記録されます。</li>
+      <li>英語基礎・高認英単語・歴史総合は、<b>印刷できるプリントの見本</b>もご覧いただけます。</li>
+    </ol>
+    <div class="ai-note" id="aiNote">
+      🤖 <b>AIへの質問と、講師へのLINE質問は、本科でご利用いただく機能です。</b><br>
+      体験中にわからないことがあれば、LINEでお気軽にご相談ください。
     </div>
   </div>
 
-  <!-- 数学 -->
-  <div class="panel">
-    <div class="ph math">
-      <div class="ph-icon">📐</div>
-      <div>
-        <div class="ph-name">数学</div>
-        <div class="ph-sub">二次関数・三角比・データの分析｜高認頻出10問</div>
-      </div>
+  <div class="section-title hide-ended">体験できる教材（受験9科目）</div>
+  <p class="stat">13教材・全437単元のうち、前半の222単元をお試しいただけます。</p>
+
+  <div class="cards" id="mainArea">
+
+<details class="subject-card c-kokugo" id="c-kokugo">
+  <summary>
+    <span class="card-emoji">📖</span>
+    <span class="card-info">
+      <span class="card-category">国語</span>
+      <span class="card-name">国語</span>
+      <span class="card-level">⭐ 高認国語対応　／　体験できるのは前半 <b>17</b> 単元（全34単元）</span>
+    </span>
+    <span class="chev" aria-hidden="true">▾</span>
+  </summary>
+  <div class="card-body">
+    <p class="card-desc">現代文の読解から古文・漢文・敬語・会話文まで。消去法で答えを絞る練習ができます。</p>
+    <div class="btn-row">
+      <a class="start-btn" href="https://realizefield.github.io/Japanese/yondeikou_sousa.html" target="_blank" rel="noopener">▶ ここから始める</a>
+      
     </div>
-    <div class="qa" id="qa-math"></div>
-    <div class="lr" id="lr-math">
-      <div class="lr-score" id="lrs-math">0</div>
-      <div class="lr-total">/ 10問</div>
-      <div class="lr-msg" id="lrm-math"></div>
+    <p class="list-title">体験できる単元（17）</p>
+    <ol class="unit-list">
+<li><a href="https://realizefield.github.io/Japanese/yondeikou_sousa.html" target="_blank" rel="noopener">読解捜査室 ～ネコ警部と新人捜査官～</a></li>
+<li><a href="https://realizefield.github.io/Japanese/yondeikou_01_v3.html" target="_blank" rel="noopener">読んでいこう 第1回 — 坊っちゃん</a></li>
+<li><a href="https://realizefield.github.io/Japanese/yondeikou_02_neko.html" target="_blank" rel="noopener">読んでいこう 第2回 — 吾輩は猫である</a></li>
+<li><a href="https://realizefield.github.io/Japanese/yondeikou_03_kumo.html" target="_blank" rel="noopener">読んでいこう 第3回 — 蜘蛛の糸</a></li>
+<li><a href="https://realizefield.github.io/Japanese/yondeikou_04_unkei.html" target="_blank" rel="noopener">読んでいこう 第4回 — 夢十夜・運慶</a></li>
+<li><a href="https://realizefield.github.io/Japanese/yondeikou_05_torokko.html" target="_blank" rel="noopener">読んでいこう 第5回 — トロッコ</a></li>
+<li><a href="https://realizefield.github.io/Japanese/yondeikou_06_melos.html" target="_blank" rel="noopener">読んでいこう 第6回 — 走れメロス</a></li>
+<li><a href="https://realizefield.github.io/Japanese/yondeikou_07_bakaichi.html" target="_blank" rel="noopener">読んでいこう 第7回 — 馬鹿一</a></li>
+<li><a href="https://realizefield.github.io/Japanese/kobun_01.html" target="_blank" rel="noopener">古文 Unit1 読み方のルール</a></li>
+<li><a href="https://realizefield.github.io/Japanese/kobun_02.html" target="_blank" rel="noopener">古文 Unit2 古文単語30</a></li>
+<li><a href="https://realizefield.github.io/Japanese/kobun_03.html" target="_blank" rel="noopener">古文 Unit3 古文の敬語</a></li>
+<li><a href="https://realizefield.github.io/Japanese/kobun_04.html" target="_blank" rel="noopener">古文 Unit4 助動詞6つだけ</a></li>
+<li><a href="https://realizefield.github.io/Japanese/kobun_05.html" target="_blank" rel="noopener">古文 Unit5 主語の読み取り</a></li>
+<li><a href="https://realizefield.github.io/Japanese/kobun_kouryaku_01.html" target="_blank" rel="noopener">古文攻略① 竹取物語</a></li>
+<li><a href="https://realizefield.github.io/Japanese/kobun_kouryaku_02.html" target="_blank" rel="noopener">古文攻略② 枕草子</a></li>
+<li><a href="https://realizefield.github.io/Japanese/kobun_kouryaku_03.html" target="_blank" rel="noopener">古文攻略③ 伊勢物語</a></li>
+<li><a href="https://realizefield.github.io/Japanese/kobun_kouryaku_04.html" target="_blank" rel="noopener">古文攻略④ 源氏物語</a></li>
+    </ol>
+    <p class="more">続きの<b>17</b>単元は、本科でご利用いただけます。</p>
+  </div>
+</details>
+
+<details class="subject-card c-english" id="c-hs_tango">
+  <summary>
+    <span class="card-emoji">🔤</span>
+    <span class="card-info">
+      <span class="card-category">英語</span>
+      <span class="card-name">高認英単語</span>
+      <span class="card-level">⭐ 高認対応レベル　／　体験できるのは前半 <b>10</b> 単元（全20単元）</span>
+    </span>
+    <span class="chev" aria-hidden="true">▾</span>
+  </summary>
+  <div class="card-body">
+    <p class="card-desc">高認の過去問に出てきた単語を、暗記カード方式で覚えます。</p>
+    <div class="btn-row">
+      <a class="start-btn" href="https://realizefield.github.io/kounin_english_word/HS_0101.html" target="_blank" rel="noopener">▶ ここから始める</a>
+      <a class="pdf-btn" href="sample/kounin-tango-sample.pdf" target="_blank" rel="noopener">📄 プリント見本（高認英単語）を見る・印刷する</a>
     </div>
+    <p class="list-title">体験できる単元（10）</p>
+    <ol class="unit-list">
+<li><a href="https://realizefield.github.io/kounin_english_word/HS_0101.html" target="_blank" rel="noopener">01. 動詞：達成・獲得</a></li>
+<li><a href="https://realizefield.github.io/kounin_english_word/HS_0201.html" target="_blank" rel="noopener">02. 動詞：影響・変化</a></li>
+<li><a href="https://realizefield.github.io/kounin_english_word/HS_0301.html" target="_blank" rel="noopener">03. 動詞：思考・判断</a></li>
+<li><a href="https://realizefield.github.io/kounin_english_word/HS_0401.html" target="_blank" rel="noopener">04. 動詞：社会・行動</a></li>
+<li><a href="https://realizefield.github.io/kounin_english_word/HS_0501.html" target="_blank" rel="noopener">05. 動詞：認知・情報</a></li>
+<li><a href="https://realizefield.github.io/kounin_english_word/HS_0601.html" target="_blank" rel="noopener">06. 動詞：支援・変革</a></li>
+<li><a href="https://realizefield.github.io/kounin_english_word/HS_0701.html" target="_blank" rel="noopener">07. 動詞：困難・対処</a></li>
+<li><a href="https://realizefield.github.io/kounin_english_word/HS_0801.html" target="_blank" rel="noopener">08. 動詞：その他重要</a></li>
+<li><a href="https://realizefield.github.io/kounin_english_word/HS_0901.html" target="_blank" rel="noopener">09. 名詞：社会・問題</a></li>
+<li><a href="https://realizefield.github.io/kounin_english_word/HS_1001.html" target="_blank" rel="noopener">10. 名詞：環境・科学</a></li>
+    </ol>
+    <p class="more">続きの<b>10</b>単元は、本科でご利用いただけます。</p>
+  </div>
+</details>
+
+<details class="subject-card c-english" id="c-js_tango">
+  <summary>
+    <span class="card-emoji">📝</span>
+    <span class="card-info">
+      <span class="card-category">英語</span>
+      <span class="card-name">中学復習英単語</span>
+      <span class="card-level">⭐ 基礎からの復習　／　体験できるのは前半 <b>60</b> 単元（全119単元）</span>
+    </span>
+    <span class="chev" aria-hidden="true">▾</span>
+  </summary>
+  <div class="card-body">
+    <p class="card-desc">英語の基礎に不安がある方のための、中学英単語の復習です。</p>
+    <div class="btn-row">
+      <a class="start-btn" href="https://realizefield.github.io/j-engglish-word/JS_ew01.html" target="_blank" rel="noopener">▶ ここから始める</a>
+      
+    </div>
+    <p class="list-title">体験できる単元（60）</p>
+    <ol class="unit-list">
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_ew01.html" target="_blank" rel="noopener">曜日・月名（1）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_ew02.html" target="_blank" rel="noopener">曜日・月名（2）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_ns01.html" target="_blank" rel="noopener">数・序数（1）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_ns02.html" target="_blank" rel="noopener">数・序数（2）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_ns03.html" target="_blank" rel="noopener">数・序数（3）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_ns04.html" target="_blank" rel="noopener">数・序数（4）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_ns05.html" target="_blank" rel="noopener">数・序数（5）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_ns06.html" target="_blank" rel="noopener">数・序数（6）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_sw01.html" target="_blank" rel="noopener">季節・天気・災害（1）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_sw02.html" target="_blank" rel="noopener">季節・天気・災害（2）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_sw03.html" target="_blank" rel="noopener">季節・天気・災害（3）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_en01.html" target="_blank" rel="noopener">環境・自然（1）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_en02.html" target="_blank" rel="noopener">環境・自然（2）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_en03.html" target="_blank" rel="noopener">環境・自然（3）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_en04.html" target="_blank" rel="noopener">環境・自然（4）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_an01.html" target="_blank" rel="noopener">動物（1）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_an02.html" target="_blank" rel="noopener">動物（2）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_an03.html" target="_blank" rel="noopener">動物（3）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_an04.html" target="_blank" rel="noopener">動物（4）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_sp01.html" target="_blank" rel="noopener">スポーツ・楽器（1）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_sp02.html" target="_blank" rel="noopener">スポーツ・楽器（2）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_sp03.html" target="_blank" rel="noopener">スポーツ・楽器（3）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_sp04.html" target="_blank" rel="noopener">スポーツ・楽器（4）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_sp05.html" target="_blank" rel="noopener">スポーツ・楽器（5）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_fd01.html" target="_blank" rel="noopener">食べ物・飲み物（1）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_fd02.html" target="_blank" rel="noopener">食べ物・飲み物（2）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_fd03.html" target="_blank" rel="noopener">食べ物・飲み物（3）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_fd04.html" target="_blank" rel="noopener">食べ物・飲み物（4）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_fd05.html" target="_blank" rel="noopener">食べ物・飲み物（5）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_fd06.html" target="_blank" rel="noopener">食べ物・飲み物（6）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_sc01.html" target="_blank" rel="noopener">学校生活（1）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_sc02.html" target="_blank" rel="noopener">学校生活（2）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_sc03.html" target="_blank" rel="noopener">学校生活（3）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_sc04.html" target="_blank" rel="noopener">学校生活（4）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_sc05.html" target="_blank" rel="noopener">学校生活（5）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_sc06.html" target="_blank" rel="noopener">学校生活（6）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_hh01.html" target="_blank" rel="noopener">家・家具・家電（1）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_hh02.html" target="_blank" rel="noopener">家・家具・家電（2）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_hh03.html" target="_blank" rel="noopener">家・家具・家電（3）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_hh04.html" target="_blank" rel="noopener">家・家具・家電（4）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_hh05.html" target="_blank" rel="noopener">家・家具・家電（5）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_hh06.html" target="_blank" rel="noopener">家・家具・家電（6）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_fm01.html" target="_blank" rel="noopener">家族・人（1）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_fm02.html" target="_blank" rel="noopener">家族・人（2）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_fm03.html" target="_blank" rel="noopener">家族・人（3）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_fm04.html" target="_blank" rel="noopener">家族・人（4）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_fm05.html" target="_blank" rel="noopener">家族・人（5）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_tr01.html" target="_blank" rel="noopener">乗り物・交通（1）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_tr02.html" target="_blank" rel="noopener">乗り物・交通（2）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_tr03.html" target="_blank" rel="noopener">乗り物・交通（3）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_to01.html" target="_blank" rel="noopener">町・施設・地理（1）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_to02.html" target="_blank" rel="noopener">町・施設・地理（2）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_to03.html" target="_blank" rel="noopener">町・施設・地理（3）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_to04.html" target="_blank" rel="noopener">町・施設・地理（4）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_to05.html" target="_blank" rel="noopener">町・施設・地理（5）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_to06.html" target="_blank" rel="noopener">町・施設・地理（6）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_jb01.html" target="_blank" rel="noopener">職業（1）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_jb02.html" target="_blank" rel="noopener">職業（2）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_jb03.html" target="_blank" rel="noopener">職業（3）</a></li>
+<li><a href="https://realizefield.github.io/j-engglish-word/JS_jb04.html" target="_blank" rel="noopener">職業（4）</a></li>
+    </ol>
+    <p class="more">続きの<b>59</b>単元は、本科でご利用いただけます。</p>
+  </div>
+</details>
+
+<details class="subject-card c-english" id="c-eigo_kiso">
+  <summary>
+    <span class="card-emoji">📝</span>
+    <span class="card-info">
+      <span class="card-category">英語</span>
+      <span class="card-name">英語基礎（中学英文法）</span>
+      <span class="card-level">⭐ 高認英語の土台　／　体験できるのは前半 <b>20</b> 単元（全39単元）</span>
+    </span>
+    <span class="chev" aria-hidden="true">▾</span>
+  </summary>
+  <div class="card-body">
+    <p class="card-desc">中学英文法をゼロから。説明→例題→類題→テストの順に進みます。</p>
+    <div class="btn-row">
+      <a class="start-btn" href="https://realizefield.github.io/j-english/EA01.html" target="_blank" rel="noopener">▶ ここから始める</a>
+      <a class="pdf-btn" href="sample/eigo-kiso-sample.pdf" target="_blank" rel="noopener">📄 プリント見本（英語基礎 EA01）を見る・印刷する</a>
+    </div>
+    <p class="list-title">体験できる単元（20）</p>
+    <ol class="unit-list">
+<li><a href="https://realizefield.github.io/j-english/EA01.html" target="_blank" rel="noopener">EA01 be動詞(1)</a></li>
+<li><a href="https://realizefield.github.io/j-english/EA02.html" target="_blank" rel="noopener">EA02 This / That / It</a></li>
+<li><a href="https://realizefield.github.io/j-english/EA03.html" target="_blank" rel="noopener">EA03 be動詞 否定文</a></li>
+<li><a href="https://realizefield.github.io/j-english/EA04.html" target="_blank" rel="noopener">EA04 be動詞 疑問文</a></li>
+<li><a href="https://realizefield.github.io/j-english/EA05.html" target="_blank" rel="noopener">EA05 一般動詞(1)</a></li>
+<li><a href="https://realizefield.github.io/j-english/EA06.html" target="_blank" rel="noopener">EA06 一般動詞 否定文</a></li>
+<li><a href="https://realizefield.github.io/j-english/EA07.html" target="_blank" rel="noopener">EA07 一般動詞 疑問文</a></li>
+<li><a href="https://realizefield.github.io/j-english/EA08.html" target="_blank" rel="noopener">EA08 疑問詞 What / Who</a></li>
+<li><a href="https://realizefield.github.io/j-english/EA09.html" target="_blank" rel="noopener">EA09 疑問詞 Where / When / How</a></li>
+<li><a href="https://realizefield.github.io/j-english/EA10.html" target="_blank" rel="noopener">EA10 現在進行形</a></li>
+<li><a href="https://realizefield.github.io/j-english/EA11.html" target="_blank" rel="noopener">EA11 疑問詞① What time / How / What</a></li>
+<li><a href="https://realizefield.github.io/j-english/EA12.html" target="_blank" rel="noopener">EA12 疑問詞② When / Where / How many / Who</a></li>
+<li><a href="https://realizefield.github.io/j-english/EA13.html" target="_blank" rel="noopener">EA13 命令文</a></li>
+<li><a href="https://realizefield.github.io/j-english/EA14.html" target="_blank" rel="noopener">EA14 現在進行形</a></li>
+<li><a href="https://realizefield.github.io/j-english/EA15.html" target="_blank" rel="noopener">EA15 習慣的な疑問文</a></li>
+<li><a href="https://realizefield.github.io/j-english/EA16.html" target="_blank" rel="noopener">EA16 助動詞 can</a></li>
+<li><a href="https://realizefield.github.io/j-english/EA17.html" target="_blank" rel="noopener">EA17 There is / There are</a></li>
+<li><a href="https://realizefield.github.io/j-english/EA18.html" target="_blank" rel="noopener">EA18 many / much / a few / a little</a></li>
+<li><a href="https://realizefield.github.io/j-english/EA19.html" target="_blank" rel="noopener">EA19 a piece of / a cup of / 書きかえ</a></li>
+<li><a href="https://realizefield.github.io/j-english/EA20.html" target="_blank" rel="noopener">EA20 as 原級 as / not as 原級 as</a></li>
+    </ol>
+    <p class="more">続きの<b>19</b>単元は、本科でご利用いただけます。</p>
+  </div>
+</details>
+
+<details class="subject-card c-english" id="c-eigo_hatten">
+  <summary>
+    <span class="card-emoji">🎓</span>
+    <span class="card-info">
+      <span class="card-category">英語</span>
+      <span class="card-name">高認英語（発展）</span>
+      <span class="card-level">⭐ 余裕があれば　／　体験できるのは前半 <b>6</b> 単元（全11単元）</span>
+    </span>
+    <span class="chev" aria-hidden="true">▾</span>
+  </summary>
+  <div class="card-body">
+    <p class="card-desc">時制・助動詞・不定詞など。まずは「英語基礎」からお進みください。</p>
+    <div class="btn-row">
+      <a class="start-btn" href="https://realizefield.github.io/kounin_eng_grammer/kounineng1.html" target="_blank" rel="noopener">▶ ここから始める</a>
+      
+    </div>
+    <p class="list-title">体験できる単元（6）</p>
+    <ol class="unit-list">
+<li><a href="https://realizefield.github.io/kounin_eng_grammer/kounineng1.html" target="_blank" rel="noopener">Unit 1 品詞と文の成り立ち</a></li>
+<li><a href="https://realizefield.github.io/kounin_eng_grammer/kounineng2.html" target="_blank" rel="noopener">Unit 2 時制</a></li>
+<li><a href="https://realizefield.github.io/kounin_eng_grammer/kounineng3.html" target="_blank" rel="noopener">Unit 3 助動詞</a></li>
+<li><a href="https://realizefield.github.io/kounin_eng_grammer/kounineng4.html" target="_blank" rel="noopener">Unit 4 不定詞</a></li>
+<li><a href="https://realizefield.github.io/kounin_eng_grammer/kounineng5.html" target="_blank" rel="noopener">Unit 5 動名詞</a></li>
+<li><a href="https://realizefield.github.io/kounin_eng_grammer/kounineng6.html" target="_blank" rel="noopener">Unit 6 分詞</a></li>
+    </ol>
+    <p class="more">続きの<b>5</b>単元は、本科でご利用いただけます。</p>
+  </div>
+</details>
+
+<details class="subject-card c-math" id="c-sugaku_keisan">
+  <summary>
+    <span class="card-emoji">📐</span>
+    <span class="card-info">
+      <span class="card-category">数学</span>
+      <span class="card-name">計算復習</span>
+      <span class="card-level">⭐ 高認数学の土台　／　体験できるのは前半 <b>34</b> 単元（全68単元）</span>
+    </span>
+    <span class="chev" aria-hidden="true">▾</span>
+  </summary>
+  <div class="card-body">
+    <p class="card-desc">分数・小数から二次方程式まで、ひとつずつ積み上げます。数学に不安がある方は、まずここから。</p>
+    <div class="btn-row">
+      <a class="start-btn" href="https://realizefield.github.io/j-math/MA01/intro.html" target="_blank" rel="noopener">▶ ここから始める</a>
+      
+    </div>
+    <p class="list-title">体験できる単元（34）</p>
+    <ol class="unit-list">
+<li><a href="https://realizefield.github.io/j-math/MA01/intro.html" target="_blank" rel="noopener">MA01 分数の性質・通分</a></li>
+<li><a href="https://realizefield.github.io/j-math/MA02/intro.html" target="_blank" rel="noopener">MA02 約分</a></li>
+<li><a href="https://realizefield.github.io/j-math/MA03/intro.html" target="_blank" rel="noopener">MA03 分数をたす・ひく</a></li>
+<li><a href="https://realizefield.github.io/j-math/MA04/intro.html" target="_blank" rel="noopener">MA04 通分する計算</a></li>
+<li><a href="https://realizefield.github.io/j-math/MA05/intro.html" target="_blank" rel="noopener">MA05 1と分数の計算</a></li>
+<li><a href="https://realizefield.github.io/j-math/MA06/intro.html" target="_blank" rel="noopener">MA06 整数と分数の計算</a></li>
+<li><a href="https://realizefield.github.io/j-math/MA07/intro.html" target="_blank" rel="noopener">MA07 帯分数と仮分数</a></li>
+<li><a href="https://realizefield.github.io/j-math/MA08/intro.html" target="_blank" rel="noopener">MA08 帯分数の計算</a></li>
+<li><a href="https://realizefield.github.io/j-math/MA09/intro.html" target="_blank" rel="noopener">MA09 整数 × 分数</a></li>
+<li><a href="https://realizefield.github.io/j-math/MA10/intro.html" target="_blank" rel="noopener">MA10 分数 × 分数</a></li>
+<li><a href="https://realizefield.github.io/j-math/MA11/intro.html" target="_blank" rel="noopener">MA11 整数 ÷ 分数</a></li>
+<li><a href="https://realizefield.github.io/j-math/MA12/intro.html" target="_blank" rel="noopener">MA12 分数 ÷ 分数</a></li>
+<li><a href="https://realizefield.github.io/j-math/MA13/intro.html" target="_blank" rel="noopener">MA13 混合計算</a></li>
+<li><a href="https://realizefield.github.io/j-math/MA14/intro.html" target="_blank" rel="noopener">MA14 小数のたし算・ひき算</a></li>
+<li><a href="https://realizefield.github.io/j-math/MA15/intro.html" target="_blank" rel="noopener">MA15 小数のかけ算</a></li>
+<li><a href="https://realizefield.github.io/j-math/MA16/intro.html" target="_blank" rel="noopener">MA16 小数のわり算</a></li>
+<li><a href="https://realizefield.github.io/j-math/MB01/intro.html" target="_blank" rel="noopener">MB01 正負の数の計算①</a></li>
+<li><a href="https://realizefield.github.io/j-math/MB02/intro.html" target="_blank" rel="noopener">MB02 正負の数の計算②</a></li>
+<li><a href="https://realizefield.github.io/j-math/MB03/intro.html" target="_blank" rel="noopener">MB03 正負の数の計算③</a></li>
+<li><a href="https://realizefield.github.io/j-math/MB04/intro.html" target="_blank" rel="noopener">MB04 正負の数の計算④</a></li>
+<li><a href="https://realizefield.github.io/j-math/MB05/intro.html" target="_blank" rel="noopener">MB05 分数の正負の計算</a></li>
+<li><a href="https://realizefield.github.io/j-math/MB06/intro.html" target="_blank" rel="noopener">MB06 混合計算</a></li>
+<li><a href="https://realizefield.github.io/j-math/MB07/intro.html" target="_blank" rel="noopener">MB07 かけ算・わり算</a></li>
+<li><a href="https://realizefield.github.io/j-math/MC01/intro.html" target="_blank" rel="noopener">MC01 文字式の表し方</a></li>
+<li><a href="https://realizefield.github.io/j-math/MC02/intro.html" target="_blank" rel="noopener">MC02 同類項の計算</a></li>
+<li><a href="https://realizefield.github.io/j-math/MC03/intro.html" target="_blank" rel="noopener">MC03 文字式の乗除・分配法則</a></li>
+<li><a href="https://realizefield.github.io/j-math/MC04/intro.html" target="_blank" rel="noopener">MC04 カッコをはずす計算</a></li>
+<li><a href="https://realizefield.github.io/j-math/MC05/intro.html" target="_blank" rel="noopener">MC05 単項式の乗除</a></li>
+<li><a href="https://realizefield.github.io/j-math/MC06/intro.html" target="_blank" rel="noopener">MC06 文字式の通分・加減</a></li>
+<li><a href="https://realizefield.github.io/j-math/md01/intro.html" target="_blank" rel="noopener">MD01 χ＋a＝○，χ－a＝△</a></li>
+<li><a href="https://realizefield.github.io/j-math/md02/intro.html" target="_blank" rel="noopener">MD02 aχ＝○ 係数でわる</a></li>
+<li><a href="https://realizefield.github.io/j-math/md03/intro.html" target="_blank" rel="noopener">MD03 aχ＋b＝○</a></li>
+<li><a href="https://realizefield.github.io/j-math/md04/intro.html" target="_blank" rel="noopener">MD04 aχ＋b＝cχ＋d</a></li>
+<li><a href="https://realizefield.github.io/j-math/md05/intro.html" target="_blank" rel="noopener">MD05 かっこをはずす方程式</a></li>
+    </ol>
+    <p class="more">続きの<b>34</b>単元は、本科でご利用いただけます。</p>
+  </div>
+</details>
+
+<details class="subject-card c-math" id="c-sugaku_kounin">
+  <summary>
+    <span class="card-emoji">📘</span>
+    <span class="card-info">
+      <span class="card-category">数学</span>
+      <span class="card-name">高認数学</span>
+      <span class="card-level">⭐ 高認数学 本番対応　／　体験できるのは前半 <b>20</b> 単元（全39単元）</span>
+    </span>
+    <span class="chev" aria-hidden="true">▾</span>
+  </summary>
+  <div class="card-body">
+    <p class="card-desc">高認の過去問をもとに作った、無駄のない厳選コンテンツです。</p>
+    <div class="btn-row">
+      <a class="start-btn" href="https://realizefield.github.io/kounin-math1/kouninmath10/intro.html" target="_blank" rel="noopener">▶ ここから始める</a>
+      
+    </div>
+    <p class="list-title">体験できる単元（20）</p>
+    <ol class="unit-list">
+<li><a href="https://realizefield.github.io/kounin-math1/kouninmath10/intro.html" target="_blank" rel="noopener">EF10 展開公式①（ax+b）(cx+d)</a></li>
+<li><a href="https://realizefield.github.io/kounin-math1/kouninmath11/intro.html" target="_blank" rel="noopener">EF11 因数分解 たすき掛け（両プラス）</a></li>
+<li><a href="https://realizefield.github.io/kounin-math1/kouninmath12/intro.html" target="_blank" rel="noopener">EF12 因数分解 たすき掛け（両マイナス）</a></li>
+<li><a href="https://realizefield.github.io/kounin-math1/kouninmath13/intro.html" target="_blank" rel="noopener">EF13 因数分解 たすき掛け（符号が逆）</a></li>
+<li><a href="https://realizefield.github.io/kounin-math1/kouninmath14/intro.html" target="_blank" rel="noopener">過去問・判別練習</a></li>
+<li><a href="https://realizefield.github.io/kounin-math1/kouninmath_in01/intro.html" target="_blank" rel="noopener">IN01 不等式の基礎 導入</a></li>
+<li><a href="https://realizefield.github.io/kounin-math1/kouninmath_in02/intro.html" target="_blank" rel="noopener">IN02 不等式の解き方① 導入</a></li>
+<li><a href="https://realizefield.github.io/kounin-math1/kouninmath_in03/intro.html" target="_blank" rel="noopener">IN03 不等式の解き方②（応用変形） 導入</a></li>
+<li><a href="https://realizefield.github.io/kounin-math1/kouninmath_in04/practice.html" target="_blank" rel="noopener">IN04 不等式の計算・過去問演習</a></li>
+<li><a href="https://realizefield.github.io/kounin-math1/kouninmath_in05/intro.html" target="_blank" rel="noopener">IN05 不等式の文章題①（合計購入型） 導入</a></li>
+<li><a href="https://realizefield.github.io/kounin-math1/IN07_kakomon/intro.html" target="_blank" rel="noopener">IN07 不等式の文章題③（料金型） 導入</a></li>
+<li><a href="https://realizefield.github.io/kounin-math1/ST01/intro.html" target="_blank" rel="noopener">ST01 集合 解説と例題</a></li>
+<li><a href="https://realizefield.github.io/kounin-math1/ST01_kakomon/practice.html" target="_blank" rel="noopener">ST01 集合 過去問演習</a></li>
+<li><a href="https://realizefield.github.io/kounin-math1/ST02/intro.html" target="_blank" rel="noopener">ST02 命題と真偽 解説</a></li>
+<li><a href="https://realizefield.github.io/kounin-math1/QU00/intro.html" target="_blank" rel="noopener">QU00 座標と放物線の基礎</a></li>
+<li><a href="https://realizefield.github.io/kounin-math1/QU01/intro.html" target="_blank" rel="noopener">QU01 頂点座標と平行移動</a></li>
+<li><a href="https://realizefield.github.io/kounin-math1/QU02/intro.html" target="_blank" rel="noopener">QU02 平方完成</a></li>
+<li><a href="https://realizefield.github.io/kounin-math1/QU03/intro.html" target="_blank" rel="noopener">QU03 様々な問題</a></li>
+<li><a href="https://realizefield.github.io/kounin-math1/QU04/intro.html" target="_blank" rel="noopener">QU04 二次不等式</a></li>
+<li><a href="https://realizefield.github.io/kounin-math1/QU05/intro.html" target="_blank" rel="noopener">QU05 解説 ― 二次関数の識別</a></li>
+    </ol>
+    <p class="more">続きの<b>19</b>単元は、本科でご利用いただけます。</p>
+  </div>
+</details>
+
+<details class="subject-card c-chiri" id="c-chiri">
+  <summary>
+    <span class="card-emoji">🌏</span>
+    <span class="card-info">
+      <span class="card-category">地理</span>
+      <span class="card-name">地理</span>
+      <span class="card-level">⭐ 高認地理対応　／　体験できるのは前半 <b>5</b> 単元（全9単元）</span>
+    </span>
+    <span class="chev" aria-hidden="true">▾</span>
+  </summary>
+  <div class="card-body">
+    <p class="card-desc">地図の見方・時差から、日本と世界の産業まで。図と地図で学びます。</p>
+    <div class="btn-row">
+      <a class="start-btn" href="https://realizefield.github.io/kounin-chiri/chizu.html" target="_blank" rel="noopener">▶ ここから始める</a>
+      
+    </div>
+    <p class="list-title">体験できる単元（5）</p>
+    <ol class="unit-list">
+<li><a href="https://realizefield.github.io/kounin-chiri/chizu.html" target="_blank" rel="noopener">地図の見方・地形図</a></li>
+<li><a href="https://realizefield.github.io/kounin-chiri/jisa.html" target="_blank" rel="noopener">時差をわかりやすく</a></li>
+<li><a href="https://realizefield.github.io/kounin-chiri/worldall0.html" target="_blank" rel="noopener">日本のすがた</a></li>
+<li><a href="https://realizefield.github.io/kounin-chiri/kouninchirijapanagr.html" target="_blank" rel="noopener">日本の農業</a></li>
+<li><a href="https://realizefield.github.io/kounin-chiri/kouninjapankougyou.html" target="_blank" rel="noopener">日本の工業</a></li>
+    </ol>
+    <p class="more">続きの<b>4</b>単元は、本科でご利用いただけます。</p>
+  </div>
+</details>
+
+<details class="subject-card c-history" id="c-rekishi">
+  <summary>
+    <span class="card-emoji">📜</span>
+    <span class="card-info">
+      <span class="card-category">歴史</span>
+      <span class="card-name">歴史総合</span>
+      <span class="card-level">⭐ 高認 歴史総合対応　／　体験できるのは前半 <b>13</b> 単元（全26単元）</span>
+    </span>
+    <span class="chev" aria-hidden="true">▾</span>
+  </summary>
+  <div class="card-body">
+    <p class="card-desc">穴埋め・人物ポップ・画像で楽しく学ぶ歴史総合。確認問題とテスト付きです。</p>
+    <div class="btn-row">
+      <a class="start-btn" href="https://realizefield.github.io/rekishisougou/kindai1.html" target="_blank" rel="noopener">▶ ここから始める</a>
+      <a class="pdf-btn" href="sample/rekishi-sample.pdf" target="_blank" rel="noopener">📄 プリント見本（歴史総合）を見る・印刷する</a>
+    </div>
+    <p class="list-title">体験できる単元（13）</p>
+    <ol class="unit-list">
+<li><a href="https://realizefield.github.io/rekishisougou/kindai1.html" target="_blank" rel="noopener">近代1 十字軍の失敗・2つのR</a></li>
+<li><a href="https://realizefield.github.io/rekishisougou/kindai2.html" target="_blank" rel="noopener">近代2 宗教改革</a></li>
+<li><a href="https://realizefield.github.io/rekishisougou/kindai3.html" target="_blank" rel="noopener">近代3 大航海時代</a></li>
+<li><a href="https://realizefield.github.io/rekishisougou/kindai4.html" target="_blank" rel="noopener">近代4 イスラーム帝国の繁栄</a></li>
+<li><a href="https://realizefield.github.io/rekishisougou/kindai5.html" target="_blank" rel="noopener">近代5 中国の明・清</a></li>
+<li><a href="https://realizefield.github.io/rekishisougou/kindai6.html" target="_blank" rel="noopener">近代6 江戸幕府の外交と鎖国</a></li>
+<li><a href="https://realizefield.github.io/rekishisougou/kindai7.html" target="_blank" rel="noopener">近代7 主権国家体制・イギリスの革命</a></li>
+<li><a href="https://realizefield.github.io/rekishisougou/kindai8.html" target="_blank" rel="noopener">近代8 産業革命・アメリカ独立・フランス革命</a></li>
+<li><a href="https://realizefield.github.io/rekishisougou/kindai9.html" target="_blank" rel="noopener">近代9 ウィーン体制・イタリア・ドイツの統一</a></li>
+<li><a href="https://realizefield.github.io/rekishisougou/kindai10.html" target="_blank" rel="noopener">近代10 フランス第二帝政・パリ＝コミューン</a></li>
+<li><a href="https://realizefield.github.io/rekishisougou/kindai11.html" target="_blank" rel="noopener">近代11 オスマン帝国の弱体化</a></li>
+<li><a href="https://realizefield.github.io/rekishisougou/kindai12.html" target="_blank" rel="noopener">近代12 アメリカの発展・19世紀のヨーロッパ文化</a></li>
+<li><a href="https://realizefield.github.io/rekishisougou/kindai13.html" target="_blank" rel="noopener">近代13 イギリスの膨張・ロシアの南下政策と改革</a></li>
+    </ol>
+    <p class="more">続きの<b>13</b>単元は、本科でご利用いただけます。</p>
+  </div>
+</details>
+
+<details class="subject-card c-koukyou" id="c-koukyou">
+  <summary>
+    <span class="card-emoji">⚖️</span>
+    <span class="card-info">
+      <span class="card-category">公共</span>
+      <span class="card-name">公共</span>
+      <span class="card-level">⭐ 高認公共対応　／　体験できるのは前半 <b>15</b> 単元（全29単元）</span>
+    </span>
+    <span class="chev" aria-hidden="true">▾</span>
+  </summary>
+  <div class="card-body">
+    <p class="card-desc">青年期・倫理・政治・経済のしくみを、わかりやすく整理して学びます。</p>
+    <div class="btn-row">
+      <a class="start-btn" href="https://realizefield.github.io/koukyou/c02_ch1_l1.html" target="_blank" rel="noopener">▶ ここから始める</a>
+      
+    </div>
+    <p class="list-title">体験できる単元（15）</p>
+    <ol class="unit-list">
+<li><a href="https://realizefield.github.io/koukyou/c02_ch1_l1.html" target="_blank" rel="noopener">L01 青年期をどう捉えるか</a></li>
+<li><a href="https://realizefield.github.io/koukyou/c02_ch1_l2.html" target="_blank" rel="noopener">L02 欲求と自己形成</a></li>
+<li><a href="https://realizefield.github.io/koukyou/c02_ch1_l3.html" target="_blank" rel="noopener">L03 職業選択とキャリア形成</a></li>
+<li><a href="https://realizefield.github.io/koukyou/c02_ch2_l1.html" target="_blank" rel="noopener">L04 幸福・正義・公正の考え方①（功利主義）</a></li>
+<li><a href="https://realizefield.github.io/koukyou/c02_ch2_l2.html" target="_blank" rel="noopener">L05 幸福・正義・公正の考え方②（義務論・徳倫理）</a></li>
+<li><a href="https://realizefield.github.io/koukyou/c02_ch2_l3.html" target="_blank" rel="noopener">L06 社会契約説と人間の尊厳</a></li>
+<li><a href="https://realizefield.github.io/koukyou/toyo1.html" target="_blank" rel="noopener">L07 東洋哲学① 中国の思想（諸子百家）</a></li>
+<li><a href="https://realizefield.github.io/koukyou/toyo2.html" target="_blank" rel="noopener">L08 東洋哲学② 朱子学・陽明学</a></li>
+<li><a href="https://realizefield.github.io/koukyou/toyo3.html" target="_blank" rel="noopener">L09 東洋哲学③ 日本の思想</a></li>
+<li><a href="https://realizefield.github.io/koukyou/c02_ch3_l1.html" target="_blank" rel="noopener">L10 情報化社会とグローバル化</a></li>
+<li><a href="https://realizefield.github.io/koukyou/c02_ch3_l2.html" target="_blank" rel="noopener">L11 消費者問題と契約</a></li>
+<li><a href="https://realizefield.github.io/koukyou/c02_ch3_l3.html" target="_blank" rel="noopener">L12 多文化共生と持続可能な社会</a></li>
+<li><a href="https://realizefield.github.io/koukyou/c02_g4_l1.html" target="_blank" rel="noopener">L13 民主政治の基本原理と選挙制度</a></li>
+<li><a href="https://realizefield.github.io/koukyou/c02_g4_l2.html" target="_blank" rel="noopener">L14 日本国憲法の基本原理</a></li>
+<li><a href="https://realizefield.github.io/koukyou/c02_g4_l3.html" target="_blank" rel="noopener">L15 基本的人権の保障</a></li>
+    </ol>
+    <p class="more">続きの<b>14</b>単元は、本科でご利用いただけます。</p>
+  </div>
+</details>
+
+<details class="subject-card c-joho" id="c-joho">
+  <summary>
+    <span class="card-emoji">💻</span>
+    <span class="card-info">
+      <span class="card-category">情報</span>
+      <span class="card-name">情報</span>
+      <span class="card-level">⭐ 高認情報対応　／　体験できるのは前半 <b>3</b> 単元（全6単元）</span>
+    </span>
+    <span class="chev" aria-hidden="true">▾</span>
+  </summary>
+  <div class="card-body">
+    <p class="card-desc">高認情報Ⅰの必修単元。4割の正答で合格できます。</p>
+    <div class="btn-row">
+      <a class="start-btn" href="https://realizefield.github.io/kounin-joho/kouninjoho1.html" target="_blank" rel="noopener">▶ ここから始める</a>
+      
+    </div>
+    <p class="list-title">体験できる単元（3）</p>
+    <ol class="unit-list">
+<li><a href="https://realizefield.github.io/kounin-joho/kouninjoho1.html" target="_blank" rel="noopener">①：情報社会と権利</a></li>
+<li><a href="https://realizefield.github.io/kounin-joho/kouninjoho2.html" target="_blank" rel="noopener">②：情報社会の課題</a></li>
+<li><a href="https://realizefield.github.io/kounin-joho/kouninjoho3.html" target="_blank" rel="noopener">③：メディアと通信</a></li>
+    </ol>
+    <p class="more">続きの<b>3</b>単元は、本科でご利用いただけます。</p>
+  </div>
+</details>
+
+<details class="subject-card c-kagaku" id="c-kagaku">
+  <summary>
+    <span class="card-emoji">🔬</span>
+    <span class="card-info">
+      <span class="card-category">科学と人間生活</span>
+      <span class="card-name">科学と人間生活</span>
+      <span class="card-level">⭐ 高認理科対応　／　体験できるのは前半 <b>9</b> 単元（全17単元）</span>
+    </span>
+    <span class="chev" aria-hidden="true">▾</span>
+  </summary>
+  <div class="card-body">
+    <p class="card-desc">金属・食品・プラスチックから、光・熱・天体まで。解説→ドリル→確認テスト。</p>
+    <div class="btn-row">
+      <a class="start-btn" href="https://realizefield.github.io/kounin-kagaku/SC01_intro.html" target="_blank" rel="noopener">▶ ここから始める</a>
+      
+    </div>
+    <p class="list-title">体験できる単元（9）</p>
+    <ol class="unit-list">
+<li><a href="https://realizefield.github.io/kounin-kagaku/SC01_intro.html" target="_blank" rel="noopener">SC01 金属の分類と性質</a></li>
+<li><a href="https://realizefield.github.io/kounin-kagaku/SC03_intro.html" target="_blank" rel="noopener">SC03 さび・腐食・合金</a></li>
+<li><a href="https://realizefield.github.io/kounin-kagaku/SC04_intro.html" target="_blank" rel="noopener">SC04 食品中の成分 ① 栄養素と炭水化物</a></li>
+<li><a href="https://realizefield.github.io/kounin-kagaku/SC05_intro.html" target="_blank" rel="noopener">SC05 食品の成分と性質 ② タンパク質</a></li>
+<li><a href="https://realizefield.github.io/kounin-kagaku/SC06_intro.html" target="_blank" rel="noopener">SC06 食品の成分と性質 ③ 油脂・無機質・ビタミン</a></li>
+<li><a href="https://realizefield.github.io/kounin-kagaku/SC07_intro.html" target="_blank" rel="noopener">SC07 プラスチックの種類と性質</a></li>
+<li><a href="https://realizefield.github.io/kounin-kagaku/SC08_intro.html" target="_blank" rel="noopener">SC08 リサイクル（3R）</a></li>
+<li><a href="https://realizefield.github.io/kounin-kagaku/SC10_intro.html" target="_blank" rel="noopener">SC10 化学繊維 intro</a></li>
+<li><a href="https://realizefield.github.io/kounin-kagaku/SC11_intro.html" target="_blank" rel="noopener">SC11 界面活性剤 intro</a></li>
+    </ol>
+    <p class="more">続きの<b>8</b>単元は、本科でご利用いただけます。</p>
+  </div>
+</details>
+
+<details class="subject-card c-seibutsu" id="c-seibutsu">
+  <summary>
+    <span class="card-emoji">🌿</span>
+    <span class="card-info">
+      <span class="card-category">生物基礎</span>
+      <span class="card-name">生物基礎</span>
+      <span class="card-level">⭐ 高認生物基礎対応　／　体験できるのは前半 <b>10</b> 単元（全20単元）</span>
+    </span>
+    <span class="chev" aria-hidden="true">▾</span>
+  </summary>
+  <div class="card-body">
+    <p class="card-desc">細胞・遺伝・体のしくみ・生態系を、図解で学びます。</p>
+    <div class="btn-row">
+      <a class="start-btn" href="https://realizefield.github.io/kounin-seibutu/saibou1.html" target="_blank" rel="noopener">▶ ここから始める</a>
+      
+    </div>
+    <p class="list-title">体験できる単元（10）</p>
+    <ol class="unit-list">
+<li><a href="https://realizefield.github.io/kounin-seibutu/saibou1.html" target="_blank" rel="noopener">細胞①原核・真核細胞の構造</a></li>
+<li><a href="https://realizefield.github.io/kounin-seibutu/saibou2.html" target="_blank" rel="noopener">細胞②原核細胞の構造</a></li>
+<li><a href="https://realizefield.github.io/kounin-seibutu/saibou3.html" target="_blank" rel="noopener">細胞③ 代謝・酵素</a></li>
+<li><a href="https://realizefield.github.io/kounin-seibutu/BL01_intro.html" target="_blank" rel="noopener">BL01 光合成のしくみと光合成色素</a></li>
+<li><a href="https://realizefield.github.io/kounin-seibutu/BL02_intro.html" target="_blank" rel="noopener">BL02 呼吸と光の強さ・補償点・光飽和点</a></li>
+<li><a href="https://realizefield.github.io/kounin-seibutu/BL03_intro.html" target="_blank" rel="noopener">BL03 陽性植物と陰性植物・陽葉と陰葉</a></li>
+<li><a href="https://realizefield.github.io/kounin-seibutu/BL04_intro.html" target="_blank" rel="noopener">BL04 遺伝子とDNA・ゲノム</a></li>
+<li><a href="https://realizefield.github.io/kounin-seibutu/BL07.html" target="_blank" rel="noopener">BL07 遺伝情報の発現</a></li>
+<li><a href="https://realizefield.github.io/kounin-seibutu/BL08.html" target="_blank" rel="noopener">BL08 遺伝子の本体をさぐる実験</a></li>
+<li><a href="https://realizefield.github.io/kounin-seibutu/BL05.html" target="_blank" rel="noopener">BL05 遺伝子・DNA構造と塩基の相補性</a></li>
+    </ol>
+    <p class="more">続きの<b>10</b>単元は、本科でご利用いただけます。</p>
+  </div>
+</details>
   </div>
 
-  <div class="cta-box">
-    <h2>手応えはいかがでしたか？<br>ここから先は、GAMBAが伴走します。</h2>
-    <p>分からないところがあっても大丈夫。AIにいつでも質問でき、それでも解決しなければLINEで講師に直接聞けます。<br>まずは無料相談から、お気軽にどうぞ。</p>
+  <!-- 期限切れ表示 -->
+  <div class="ended-panel" id="endedPanel">
+    <h2>7日間の無料体験は終了しました</h2>
+    <p>ご利用いただき、ありがとうございました。</p>
+    <p>続きの全単元、AI質問、印刷できるプリントは、本科でご利用いただけます。</p>
     <div class="cta-btns">
-      <a href="https://kouninbegin.com/#contact" class="cta-btn main">メールで無料相談する →</a>
-      <a href="https://line.me/R/ti/p/@735itfta" target="_blank" class="cta-btn line">💬 LINEで相談する →</a>
+      <a class="btn btn-primary" href="https://kouninbegin.com/#apply" target="_blank" rel="noopener">本科に申し込む（月4,980円〜）</a>
+      <a class="btn btn-line" href="https://line.me/R/ti/p/@735itfta" target="_blank" rel="noopener">💬 LINEで相談する</a>
+      <a class="btn btn-ghost" href="tel:0963826761">📞 096-382-6761</a>
     </div>
-    <p class="cta-note">※ しつこい営業は一切ありません。20数年の実績・合格率90%以上。</p>
+    <p style="font-size:.74rem;color:#777;margin-top:14px">しつこい営業は一切いたしません。まずはご相談だけでも大丈夫です。</p>
   </div>
+
+  <div class="cta-section">
+    <div class="cta-title">続きは本科で。わからないことは、いつでも相談を</div>
+    <div class="cta-text">
+      本科では、全単元・AI質問・印刷できるプリントがご利用いただけます。<br>
+      月4,980円〜／追加費用なし／入会金なし。<br>
+      LINEで講師に質問できるコースもあります。
+    </div>
+    <div class="cta-btns">
+      <a class="btn btn-primary" href="https://kouninbegin.com/#apply" target="_blank" rel="noopener">本科の内容を見る・申し込む</a>
+      <a class="btn btn-line" href="https://line.me/R/ti/p/@735itfta" target="_blank" rel="noopener">💬 LINEで相談する</a>
+    </div>
+    <div class="cta-small">お電話：096-382-6761（江原予備校）</div>
+  </div>
+
+  <!-- ===== ご意見フォーム ===== -->
+  <div class="section-title" id="feedback">教材づくりの担当者へ、ご意見をお寄せください</div>
+  <form class="fb" id="fbForm" novalidate>
+    <p class="lead">「ここがわかりにくい」「こんな教材がほしい」など、率直なご意見をお待ちしています。
+      いただいたご意見は、教材の改善に使わせていただきます。</p>
+    <label for="fbType">ご意見の種類</label>
+    <select id="fbType">
+      <option value="わかりにくい・使いにくい点">わかりにくい・使いにくい点</option>
+      <option value="こうしてほしい（ご要望）">こうしてほしい（ご要望）</option>
+      <option value="間違いを見つけた">間違いを見つけた</option>
+      <option value="よかった点">よかった点</option>
+      <option value="その他">その他</option>
+    </select>
+    <label for="fbText">ご意見の内容</label>
+    <textarea id="fbText" maxlength="800" placeholder="例：〇〇の単元で、△△の説明がわかりませんでした。"></textarea>
+    <div class="count"><span id="fbCount">0</span> / 800字</div>
+    <label for="fbName">お名前（任意・ニックネーム可）</label>
+    <input type="text" id="fbName" maxlength="40" autocomplete="off">
+    <label for="fbContact">ご連絡先（返信を希望する場合のみ・メールまたはLINE名）</label>
+    <input type="text" id="fbContact" maxlength="80" autocomplete="off">
+    <div class="hint">個人情報（住所・電話番号など）や、体調・家庭の事情などは書かないでください。</div>
+    <div class="hp" aria-hidden="true"><label>この欄は空のままにしてください<input type="text" id="fbHp" tabindex="-1" autocomplete="off"></label></div>
+    <button type="submit" id="fbBtn">送信する</button>
+    <div class="msg" id="fbMsg" role="status"></div>
+  </form>
+
+  <details class="terms">
+    <summary>ご利用にあたって（使用規約）</summary>
+    <div class="tbody">
+      <ol>
+        <li>無料体験は、初めてページを開いた日から<b>7日間</b>です。期間を過ぎると、このページの教材の案内は表示されなくなります。</li>
+        <li>体験できる範囲は、各科目の前半の単元です。続きは本科でご利用いただけます。</li>
+        <li>教材・プリント・画像・文章の著作権は、江原予備校（株式会社アイラコーポレーション）に帰属します。</li>
+        <li><b>ご本人の学習の目的以外での利用</b>（複写・転載・再配布・販売・他社の教材や講座への利用など）は、固くお断りします。</li>
+        <li>プリントの見本の印刷は、ご本人の学習用に限ります。</li>
+        <li>体験中のAI質問は、合計5回までです。講師への質問（LINE・Zoomなど）は、本科の機能です。</li>
+        <li>ご意見フォームに入力された内容は、教材の改善のためにのみ使います。個人情報は書かないでください。</li>
+        <li>不適切な利用があった場合は、ご利用をお断りすることがあります。</li>
+      </ol>
+      <p style="margin-top:10px">お問い合わせ：江原予備校　TEL 096-382-6761 ／ Mail kogen@coast.ocn.ne.jp</p>
+    </div>
+  </details>
 
 </div>
 
-<footer>© 江原予備校 GAMBA｜<a href="https://kouninbegin.com" style="color:var(--blue-dark)">kouninbegin.com へ戻る</a></footer>
+<footer>
+  © 江原予備校 / 株式会社 アイラコーポレーション<br>
+  〒862-0950　熊本市中央区水前寺3丁目1-3　TEL：096-382-6761<br>
+  <a href="https://kouninbegin.com" target="_blank" rel="noopener">kouninbegin.com へ戻る</a>
+</footer>
 
 <script>
-const QUESTIONS = {
-  info: [
-    { text:"「情報」科目の説明として正しいものを選びなさい。", options:["2026年度から高認の新必修科目","選択科目の一つである","2020年から必修だった","理科の一部として扱われる"], answer:0, exp:"<strong>2026年度（令和8年度）から高認の新必修科目</strong>として追加された。高校「情報Ⅰ」に準拠した内容。" },
-    { text:"インターネットで情報を検索するためのソフトウェアを何というか。", options:["ブラウザ（Webブラウザ）","メーラー","OS","ワープロ"], answer:0, exp:"<strong>ブラウザ（Webブラウザ）</strong>はHTMLを読んでWebページを表示するソフト。例：Chrome、Firefox、Edge。" },
-    { text:"電子メールのアドレス「taro@example.com」で「@」より前の部分を何というか。", options:["ユーザー名（アカウント名）","ドメイン名","プロトコル","ポート番号"], answer:0, exp:"メールアドレスは「<strong>ユーザー名</strong> @ ドメイン名」の構造。@より後の example.com がドメイン名。" },
-    { text:"著作権について正しいものを選びなさい。", options:["インターネット上の画像も著作権で保護されている","著作権は作者が死亡した瞬間に消滅する","フリーと書いてあれば何でも使用できる","スクリーンショットは常に自由に使える"], answer:0, exp:"<strong>著作権はインターネット上の作品にも適用</strong>される。作者の死後70年まで保護が続く（著作権法）。" },
-    { text:"パスワードの設定として最も安全なものを選びなさい。", options:["大文字・小文字・数字・記号を混在させた12文字以上","自分の誕生日8桁","名前をそのまま使った6文字","password という文字列"], answer:0, exp:"<strong>長く・複雑なパスワード</strong>が安全。誕生日・名前・password は不正アクセスされやすい最も危険な例。" },
-    { text:"コンピュータのOSとして正しいものを選びなさい。", options:["Windows・macOS・Android","Word・Excel・PowerPoint","Chrome・Firefox・Edge","Python・Java・C言語"], answer:0, exp:"<strong>OS（オペレーティングシステム）</strong>はコンピュータ全体を管理するソフトウェア。Windows・macOS・Androidなどが代表例。" },
-    { text:"「フィッシング詐欺」の説明として正しいものを選びなさい。", options:["偽サイトや偽メールでID・パスワードを騙し取る詐欺","魚釣りゲームを悪用した詐欺","コンピュータに侵入するウイルスの一種","メールの添付ファイルで感染するマルウェア"], answer:0, exp:"<strong>フィッシング詐欺</strong>（phishing）：偽の銀行サイト等に誘導し個人情報を騙し取る。メールのリンクに注意。" },
-    { text:"2進数「1010」を10進数に変換すると？", options:["10","8","12","14"], answer:0, exp:"1×2³ + 0×2² + 1×2¹ + 0×2⁰ = 8 + 0 + 2 + 0 = <strong>10</strong>。2進法はコンピュータの基本。" },
-    { text:"「プロトコル」の説明として正しいものを選びなさい。", options:["コンピュータ間の通信規約","コンピュータの部品の名前","ファイルの保存形式","プログラムの実行方法"], answer:0, exp:"<strong>プロトコル</strong>はコンピュータがデータをやり取りするための取り決め（規約）。HTTP・HTTPS・FTPなどが代表例。" },
-    { text:"「個人情報」の取り扱いで正しいものを選びなさい。", options:["名前・住所・電話番号などは個人情報に該当する","学校名だけでは個人情報にならない","SNSに顔写真を投稿しても個人情報の問題はない","生年月日は個人情報に含まれない"], answer:0, exp:"<strong>名前・住所・電話番号・顔写真・生年月日</strong>はすべて個人情報（個人情報保護法）。組み合わせで特定できるものも対象。" }
-  ],
-  math: [
-    { text:"二次方程式を解きなさい。", formula:"x² - 5x + 6 = 0", options:["x = 2, 3","x = 1, 6","x = -2, -3","x = -1, -6"], answer:0, exp:"因数分解：(x-2)(x-3)=0 → <strong>x=2 または x=3</strong>。因数分解できる二次方程式は必ずマスター。" },
-    { text:"y = 2x² - 4x + 1 の頂点の座標を求めなさい。", options:["(1, -1)","(-1, 7)","(2, 1)","(0, 1)"], answer:0, exp:"平方完成：y = 2(x-1)² - 1 → 頂点 <strong>(1, -1)</strong>。平方完成は高認数学の最頻出単元。" },
-    { text:"不等式を解きなさい。", formula:"3x - 6 > 0", options:["x > 2","x < 2","x > -2","x < -2"], answer:0, exp:"3x > 6 → <strong>x > 2</strong>。不等号の向きに注意（÷正の数では変わらない）。" },
-    { text:"右の三角形で tan A の値を求めなさい。（直角三角形、対辺=3、底辺=4、斜辺=5）", options:["3/4","4/3","3/5","4/5"], answer:0, exp:"tan A = 対辺 ÷ 底辺 = <strong>3/4</strong>。sin = 対/斜、cos = 底/斜、tan = 対/底 を確認。" },
-    { text:"次の2次不等式を解きなさい。", formula:"x² - 3x - 4 < 0", options:["-1 < x < 4","x < -1 または x > 4","-4 < x < 1","x < -4 または x > 1"], answer:0, exp:"(x+1)(x-4)<0 → <strong>-1 < x < 4</strong>。放物線が x 軸より下（<0）の範囲を求める。高認で8回中7回出題の最重要単元。" },
-    { text:"データ 2, 4, 6, 8, 10 の平均値と中央値を求めなさい。", options:["平均6、中央値6","平均5、中央値6","平均6、中央値5","平均5、中央値5"], answer:0, exp:"平均 = (2+4+6+8+10)/5 = 30/5 = <strong>6</strong>。中央値（3番目）= <strong>6</strong>。データの分析は頻出。" },
-    { text:"次のデータの標準偏差として正しい考え方を選びなさい。\nデータ：2, 4, 6（平均は4）", options:["各データと平均との差の二乗を平均した値の正の平方根","全データの合計を個数で割った値","最大値と最小値の差","データを小さい順に並べた中央の値"], answer:0, exp:"標準偏差の定義：<strong>分散（偏差の二乗平均）の正の平方根</strong>。データのばらつき具合を表す指標。" },
-    { text:"関数 y = -2x + 5 のグラフの傾きと y 切片を求めなさい。", options:["傾き -2、y切片 5","傾き 2、y切片 5","傾き -2、y切片 -5","傾き 5、y切片 -2"], answer:0, exp:"y = mx + b の形。m = 傾き = <strong>-2</strong>、b = y切片 = <strong>5</strong>。一次関数の基本。" },
-    { text:"次の集合について、A∩B（共通部分）を求めなさい。\nA={1,2,3,4}, B={3,4,5,6}", options:["{3,4}","{1,2,5,6}","{1,2,3,4,5,6}","{}（空集合）"], answer:0, exp:"共通部分（∩）は<strong>両方に含まれる要素</strong>。A にも B にもあるのは 3 と 4 → <strong>{3,4}</strong>。"},
-    { text:"次の式をたすき掛けで因数分解しなさい。", formula:"2x² + 5x + 3 = ?", options:["(2x+3)(x+1)","(2x+1)(x+3)","(x+3)(x-1)","(2x-3)(x-1)"], answer:0, exp:"たすき掛け：2と1、3と1の組み合わせで、外×外＋内×内 = 2x+3x = 5x になる組み合わせを探す → <strong>(2x+3)(x+1)</strong>。高認頻出パターン。" }
-  ]
-};
+(function(){
+  'use strict';
 
-const answered = { info:{}, math:{} };
-const answers  = { info:{}, math:{} };
+  /* ===== 設定（ここだけ直せば動きます） ===== */
+  var CONFIG = {
+    DAYS: 7,                                   // 体験の日数
+    FEEDBACK_URL: 'ここにGASのURLを貼り付け',    // ご意見を受け取るGoogle Apps ScriptのURL
+    MAIL_FALLBACK: 'kogen@coast.ocn.ne.jp',    // 送信できないときの宛先
+    APPLY_URL: 'https://kouninbegin.com/#apply',
+    LINE_URL: 'https://line.me/R/ti/p/@735itfta',
+    API: 'https://gamba-api.kogentext.workers.dev/'   // AIの窓口（Worker）。体験の期限とAI質問の回数を、ここで数えます
+  };
+  var KEY_START = 'gamba_demo_start';          // 教材ページのAIボタンを止める目印にも使います
+  var KEY_CID = 'gamba_demo_cid';
+  var KEY_TOKEN = 'gamba_demo_token';          // 体験の合言葉（AI質問の回数を数えるための印）
+  var DAY = 24 * 60 * 60 * 1000;
 
-function renderPanel(s) {
-  const qs = QUESTIONS[s];
-  let html = '';
-  qs.forEach((q, i) => {
-    const isDone = answered[s][i];
-    const chosen = answers[s][i];
-    let fhtml = q.formula ? '<div class="qf">' + q.formula + '</div>' : '';
-    const ohtml = q.options.map((opt, oi) => {
-      let cls = 'opt';
-      if (isDone) {
-        cls += ' dis';
-        if (oi === q.answer) cls += ' show-ok';
-        if (oi === chosen && chosen !== q.answer) cls += ' ng-ans';
+  function lsGet(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } }
+  function lsSet(k,v){ try{ localStorage.setItem(k,v); return true; }catch(e){ return false; } }
+  function lsDel(k){ try{ localStorage.removeItem(k); }catch(e){} }
+  function $(id){ return document.getElementById(id); }
+
+  /* ===== 開始日の記録（?reset=1 で最初からやり直せます：確認用） ===== */
+  if (/[?&]reset=1/.test(location.search)) { lsDel(KEY_START); lsDel(KEY_TOKEN); }
+  if (/[?&]from=limit/.test(location.search)) { var ln = document.getElementById('limitNote'); if (ln) ln.className += ' show'; }
+  var start = parseInt(lsGet(KEY_START), 10);
+  var storageOK = true;
+  if (!start || isNaN(start)) {
+    start = Date.now();
+    storageOK = lsSet(KEY_START, String(start));
+  }
+  var deadline = start + CONFIG.DAYS * DAY;
+
+  var bar = $('cdBar'), tEl = $('cdTime'), uEl = $('cdUntil'), aEl = $('cdApply'), nudge = $('nudge');
+
+  function fmtDate(ms){
+    var d = new Date(ms), w = ['日','月','火','水','木','金','土'][d.getDay()];
+    return (d.getMonth()+1) + '月' + d.getDate() + '日(' + w + ') ' +
+      ('0'+d.getHours()).slice(-2) + ':' + ('0'+d.getMinutes()).slice(-2);
+  }
+
+  function tick(){
+    if (!storageOK) {
+      tEl.textContent = '体験期間中（7日間）';
+      return;
+    }
+    var left = deadline - Date.now();
+    if (left <= 0) {
+      document.body.classList.add('expired');
+      bar.className = 'cd-bar ended';
+      tEl.textContent = '体験期間は終了しました';
+      uEl.textContent = '';
+      aEl.style.display = '';
+      aEl.textContent = '本科に進む';
+      nudge.className = 'nudge';
+      return;
+    }
+    var d = Math.floor(left / DAY), h = Math.floor((left % DAY) / 3600000), m = Math.floor((left % 3600000) / 60000);
+    tEl.textContent = '残り ' + (d > 0 ? d + '日 ' : '') + h + '時間' + (d === 0 ? ' ' + m + '分' : '');
+    uEl.textContent = '（' + fmtDate(deadline) + ' まで）';
+
+    if (left <= DAY) {
+      bar.className = 'cd-bar urgent';
+      aEl.style.display = '';
+      nudge.className = 'nudge urgent show';
+      nudge.innerHTML = '<b>体験は、あと' + (h > 0 ? h + '時間' : m + '分') + 'です。</b><br>' +
+        '続きを学びたい方は、いまのうちに本科へお進みください。今日までの学習の流れのまま続けられます。' +
+        '<div class="n-btns"><a class="btn btn-primary" href="'+CONFIG.APPLY_URL+'" target="_blank" rel="noopener">本科に申し込む</a>' +
+        '<a class="btn btn-line" href="'+CONFIG.LINE_URL+'" target="_blank" rel="noopener">💬 LINEで相談する</a></div>';
+    } else if (left <= 3 * DAY) {
+      bar.className = 'cd-bar warn';
+      aEl.style.display = '';
+      nudge.className = 'nudge warn show';
+      nudge.innerHTML = '<b>体験期間は、残り' + (d + 1 > 3 ? 3 : d + 1) + '日以内です。</b><br>' +
+        'ここまでいかがでしたか。続けたくなったら、そのまま本科に進めます。迷うときは、LINEでお気軽にご相談ください。' +
+        '<div class="n-btns"><a class="btn btn-primary" href="'+CONFIG.APPLY_URL+'" target="_blank" rel="noopener">本科の内容を見る</a>' +
+        '<a class="btn btn-line" href="'+CONFIG.LINE_URL+'" target="_blank" rel="noopener">💬 LINEで相談する</a></div>';
+    } else {
+      bar.className = 'cd-bar';
+      aEl.style.display = 'none';
+      nudge.className = 'nudge';
+    }
+  }
+  tick();
+  setInterval(tick, 30000);
+
+  /* ===== 体験の開始をWorkerに知らせる（期限とAI質問の回数を、Worker側で数えます） ===== */
+  var aiNote = $('aiNote');
+  function trialInit(){
+    if (!storageOK || !CONFIG.API) return;
+    var token = lsGet(KEY_TOKEN) || '';
+    fetch(CONFIG.API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ action: 'trial_start', token: token || undefined, since: start })
+    }).then(function(r){ return r.json(); }).then(function(j){
+      if (!(j && j.ok && j.token)) return;   // Workerが未対応でも、これまでどおり動く
+      lsSet(KEY_TOKEN, j.token);
+      deadline = j.exp;                       // 期限は、Workerの記録を正とする
+      start = j.exp - CONFIG.DAYS * DAY;
+      lsSet(KEY_START, String(start));
+      tick();
+      var left = Math.max(0, j.max - j.used);
+      aiNote.innerHTML = '🤖 <b>AIへの質問は、体験中に合計' + j.max + '回までお使いいただけます（残り ' + left + ' 回）。</b><br>' +
+        '教材のページ右下の「わからないときは」から質問できます。講師へのLINE質問は、本科でご利用いただく機能です。';
+    }).catch(function(){});
+  }
+  trialInit();
+
+  /* ===== 科目カード：件数が多いものは2列に ===== */
+  Array.prototype.forEach.call(document.querySelectorAll('.unit-list'), function(ol){
+    if (ol.children.length >= 12) ol.className += ' long';
+  });
+
+  /* ===== ご意見フォーム ===== */
+  var ta = $('fbText'), cnt = $('fbCount'), msg = $('fbMsg'), btn = $('fbBtn');
+  ta.addEventListener('input', function(){ cnt.textContent = ta.value.length; });
+
+  // 明らかな悪口だけを止めます（サーバー側でも同じ確認をします）
+  var BAD = ['死ね','しね','殺す','殺せ','くたばれ','クソ','くそ','うんこ','ゴミ','ごみ','カス','バカ','ばか','馬鹿','アホ','あほ','阿呆','ボケ','キモい','きもい','消えろ','詐欺','ぼったくり','無能','低能','クズ','くず','ふざけるな','ムカつく','うざい','ウザい'];
+  function hasBad(s){
+    var t = s.replace(/\s+/g,'');
+    for (var i=0;i<BAD.length;i++){ if (t.indexOf(BAD[i]) > -1) return true; }
+    return false;
+  }
+  function show(text, ok){ msg.className = 'msg ' + (ok ? 'ok' : 'ng'); msg.textContent = text; }
+
+  function cid(){
+    var c = lsGet(KEY_CID);
+    if (!c) { c = 'c' + Math.random().toString(36).slice(2) + Date.now().toString(36); lsSet(KEY_CID, c); }
+    return c;
+  }
+
+  $('fbForm').addEventListener('submit', function(ev){
+    ev.preventDefault();
+    if ($('fbHp').value) { show('ありがとうございました。', true); return; }   // 自動投稿は黙って捨てる
+    var text = ta.value.trim();
+    if (text.length < 5) { show('ご意見の内容を、5文字以上でお書きください。', false); return; }
+    if (hasBad([text, $('fbName').value, $('fbContact').value].join(' '))) {
+      show('きつい表現が含まれているようです。「どこが」「どうなると助かるか」を、やわらかい言葉で書き直していただけますか。', false); return;
+    }
+    var last = parseInt(lsGet('gamba_demo_fb_last'), 10) || 0;
+    if (Date.now() - last < 30000) { show('続けての送信はできません。少し時間をおいて、もう一度お試しください。', false); return; }
+
+    var payload = {
+      type: $('fbType').value, message: text,
+      name: $('fbName').value.trim(), contact: $('fbContact').value.trim(),
+      cid: cid(), start: start, page: location.pathname, ua: navigator.userAgent.slice(0,120), hp: ''
+    };
+
+    var mailto = 'mailto:' + CONFIG.MAIL_FALLBACK + '?subject=' + encodeURIComponent('【体験版へのご意見】' + payload.type) +
+      '&body=' + encodeURIComponent(text);
+
+    if (/^https:\/\/script\.google\.com\//.test(CONFIG.FEEDBACK_URL) === false) {
+      msg.className = 'msg ng';
+      msg.innerHTML = '送信の準備がまだ整っていません。お手数ですが、<a href="' + mailto + '">こちらからメールで送る</a>か、LINEでお知らせください。';
+      return;
+    }
+
+    btn.disabled = true; btn.textContent = '送信中…';
+    fetch(CONFIG.FEEDBACK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },   // 事前確認（preflight）を避けるため
+      body: JSON.stringify(payload)
+    }).then(function(r){ return r.json(); }).then(function(j){
+      if (j && j.ok) {
+        lsSet('gamba_demo_fb_last', String(Date.now()));
+        ta.value = ''; cnt.textContent = '0';
+        show('ご意見をお預かりしました。ありがとうございます。今後の教材づくりの参考にさせていただきます。', true);
+      } else if (j && j.reason === 'bad') {
+        show('きつい表現が含まれているようです。やわらかい言葉で書き直していただけますか。', false);
+      } else if (j && j.reason === 'rate') {
+        show('短い時間に続けて送信されたため、受け付けられませんでした。しばらくしてからお試しください。', false);
+      } else {
+        throw new Error('ng');
       }
-      return `<button class="${cls}" onclick="selAns('${s}',${i},${oi},${q.answer})">${opt}</button>`;
-    }).join('');
-    const icon = isDone ? (chosen === q.answer ? '✅' : '❌') : '';
-    const bc = isDone ? (chosen === q.answer ? 'qb ok' : 'qb ng') : 'qb';
-    const expCls = isDone ? ' show' : '';
-    html += `<div class="${bc}" id="qb-${s}-${i}"><div class="qb-top"><div class="qn ${s}">${i+1}</div><div class="qb-meta">第${i+1}問</div><div class="qb-ri">${icon}</div></div><div class="qt">${q.text.replace(/\n/g,"<br>")}</div>${fhtml}<div class="opts">${ohtml}</div><div class="exp${expCls}" id="exp-${s}-${i}">💡 ${q.exp}</div></div>`;
+    }).catch(function(){
+      msg.className = 'msg ng';
+      msg.innerHTML = '送信できませんでした。お手数ですが、<a href="' + mailto + '">こちらからメールで送る</a>か、LINEでお知らせください。';
+    }).then(function(){ btn.disabled = false; btn.textContent = '送信する'; });
   });
-  document.getElementById('qa-' + s).innerHTML = html;
-}
-
-function selAns(s, i, chosen, correct) {
-  if (answered[s][i]) return;
-  answered[s][i] = true;
-  answers[s][i] = chosen;
-  const block = document.getElementById('qb-' + s + '-' + i);
-  const exp = document.getElementById('exp-' + s + '-' + i);
-  block.querySelectorAll('.opt').forEach((btn, oi) => {
-    btn.classList.add('dis');
-    if (oi === correct) btn.classList.add('show-ok');
-    if (oi === chosen && chosen !== correct) btn.classList.add('ng-ans');
-  });
-  exp.classList.add('show');
-  block.className = 'qb ' + (chosen === correct ? 'ok' : 'ng');
-  block.querySelector('.qb-ri').textContent = chosen === correct ? '✅' : '❌';
-
-  const allDone = QUESTIONS[s].every((q, idx) => answered[s][idx]);
-  if (allDone) showResult(s);
-}
-
-function showResult(s) {
-  const qs = QUESTIONS[s];
-  let c = 0;
-  qs.forEach((q, i) => { if (answers[s][i] === q.answer) c++; });
-  const pct = Math.round(c / qs.length * 100);
-  let msg;
-  if (pct >= 90) msg = '素晴らしい！このペースなら十分に合格を目指せます🎉';
-  else if (pct >= 70) msg = '良い調子です。もう一歩で合格ラインです👍';
-  else if (pct >= 50) msg = '大丈夫、ここからしっかり基礎を積み上げましょう📖';
-  else msg = '基礎から始めれば、着実に力がつきます。一緒にやり直しましょう😊';
-  document.getElementById('lrs-' + s).textContent = c;
-  document.getElementById('lrm-' + s).textContent = msg;
-  const lr = document.getElementById('lr-' + s);
-  lr.classList.add('show');
-  lr.scrollIntoView({ behavior:'smooth', block:'center' });
-}
-
-renderPanel('info');
-renderPanel('math');
+})();
 </script>
 </body>
 </html>
